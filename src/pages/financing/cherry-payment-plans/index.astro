@@ -1,0 +1,58 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Banner from '../../../components/Banner.astro';
+import { SITE, telHref, u } from '../../../lib/site';
+---
+<Base title="Cherry Payment Plans" description="Get treated now and pay over time with Cherry payment plans at Salinas Valley Medical Aesthetics in Salinas, CA. Check your payment options in seconds." ogImage="2024/07/cherry-hero-02.jpg" cherry={false}>
+  <Banner title="Cherry Payment Plans" image="2024/07/cherry-hero-02.jpg" crumbs={[{ label: 'Financing', href: '/financing/' }, { label: 'Cherry Payment Plans' }]} />
+  <section class="section cherry-sec" aria-label="Cherry payment plan calculator">
+    <div class="wrap">
+      <!-- Cherry's official embeddable widget (same configuration as the current site). -->
+      <div id="all" class="cherry-all" data-slug={SITE.cherrySlug}>
+        <div class="cherry-fallback">
+          <p>Loading Cherry payment plan options…</p>
+          <p>Questions about financing? Call us at <a href={telHref}>{SITE.phone}</a> or see all <a href={u('/financing/')}>financing options</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const el = document.getElementById('all');
+  if (el && !(window as any)._hwLoaded) {
+    (window as any)._hwLoaded = true;
+    const w = window as any;
+    w._hw = w._hw || function () { (w._hw.q = w._hw.q || []).push(arguments); };
+    const s = document.createElement('script');
+    s.id = '_hw';
+    s.async = true;
+    s.src = 'https://files.withcherry.com/widgets/widget.js';
+    s.onerror = () => { el.querySelector('.cherry-fallback p')!.textContent = 'The Cherry calculator could not load right now.'; };
+    document.head.append(s);
+    w._hw('init', {
+      debug: false,
+      variables: { slug: el.dataset.slug, name: 'Salinas Valley Medical Aesthetics' },
+      styles: { primaryColor: '#5F7224', secondaryColor: '#9BB24D10', fontFamily: 'Varela', headerFontFamily: 'Source Sans 3' },
+    }, ['all', 'hero', 'howitworks', 'calculator', 'testimony', 'faq']);
+    // Hide the fallback once Cherry renders its own content
+    new MutationObserver((_, obs) => {
+      if (el.children.length > 1 || !el.querySelector('.cherry-fallback')) { el.querySelector('.cherry-fallback')?.remove(); obs.disconnect(); }
+    }).observe(el, { childList: true });
+  }
+</script>
+
+<style is:global>
+  .cherry-all { min-height: 400px; color: #000; text-align: left; }
+  .cherry-fallback { text-align: center; padding: 40px 0; color: var(--muted); }
+  /* Overrides carried over from the current site's Cherry embed */
+  .main-all_container-lL2Wi { color: #000 !important; text-align: left; }
+  .hero-hero_container-3CuNC .hero-image_container-Sn43m { max-width: 430px; align-self: end; }
+  .hero-hero_container-3CuNC .hero-image_container-Sn43m > img { object-fit: contain; margin: 0 !important; height: 100%; max-height: 430px; }
+  @media only screen and (max-width: 880px) { .hero-hero_container-3CuNC .hero-image_container-Sn43m > img { max-height: 350px !important; } }
+  @media only screen and (max-width: 410px) { .hero-hero_container-3CuNC .hero-image_container-Sn43m > img { max-height: 210px; } }
+  .howItWorks-info_container-1CA_G { max-height: 648px; position: relative; overflow: hidden; }
+  .howItWorks-video_container-3o6DC { max-height: 475px; }
+  @media only screen and (max-width: 580px) { .howItWorks-video_container-3o6DC { height: 100% !important; max-height: 316px !important; } }
+  .calculator-calculator_container-owFzI input[type="range"] { padding: 0; border: 0 none; color: inherit; }
+</style>

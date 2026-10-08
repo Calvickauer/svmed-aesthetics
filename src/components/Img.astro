@@ -1,0 +1,39 @@
+---
+/**
+ * Responsive <picture> (AVIF + WebP, srcset, intrinsic width/height) for an image in /images.
+ * `src` is the path relative to /images, e.g. "2022/12/filler.png".
+ */
+import { getImg, srcset, pick } from '../lib/img';
+interface Props {
+  src: string;
+  alt: string;
+  sizes?: string;
+  priority?: boolean;
+  class?: string;
+  imgClass?: string;
+  style?: string;
+  decorative?: boolean;
+}
+const { src, alt, sizes = '100vw', priority = false, class: cls, imgClass, style } = Astro.props;
+const e = getImg(src);
+const fallback = e.svg ? pick(src) : pick(src, 960);
+---
+{e.svg ? (
+  <img src={fallback} alt={alt} class:list={[cls, imgClass]} style={style} loading={priority ? 'eager' : 'lazy'} decoding="async" />
+) : (
+  <picture class={cls}>
+    <source type="image/avif" srcset={srcset(e.avif)} sizes={sizes} />
+    <source type="image/webp" srcset={srcset(e.webp)} sizes={sizes} />
+    <img
+      src={fallback}
+      alt={alt}
+      width={e.w}
+      height={e.h}
+      class={imgClass}
+      style={style}
+      loading={priority ? 'eager' : 'lazy'}
+      fetchpriority={priority ? 'high' : 'auto'}
+      decoding={priority ? 'sync' : 'async'}
+    />
+  </picture>
+)}

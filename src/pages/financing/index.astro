@@ -1,0 +1,43 @@
+---
+import Base from '../../layouts/Base.astro';
+import Banner from '../../components/Banner.astro';
+import Img from '../../components/Img.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import CtaBox from '../../components/CtaBox.astro';
+import TreatYourself from '../../components/TreatYourself.astro';
+import { SITE, u } from '../../lib/site';
+---
+<Base title="Financing" description="Learn more about our financing options with Cherry payment plans and CareCredit. Apply online or in the office." ogImage="2022/12/financing.png">
+  <Banner title="Financing" image="2022/12/financing.png" crumbs={[{ label: 'Financing' }]} />
+  <section class="section" aria-label="Financing options">
+    <div class="wrap fin-grid">
+      <div class="fin-card" data-reveal>
+        <h2>Cherry Payment Plans</h2>
+        <p>Cherry is a payment plan designed for your health, beauty, and wellness needs and procedures and allows you to make convenient monthly payments.</p>
+        <a href={u('/financing/cherry-payment-plans/')} class="cherry-btn">
+          <Img src="2024/07/btn_pay-with-cherry_primary@2x-300x66-1.png" alt="Pay with Cherry – learn more" sizes="240px" />
+        </a>
+      </div>
+      <div class="fin-card" id="credit" data-reveal style="--d:120ms">
+        <h2>CareCredit</h2>
+        <p>Click below to learn more about CareCredit and apply online.</p>
+        <a href={SITE.careCredit} target="_blank" rel="noopener" class="cc-link">
+          <Img src="2022/11/cc.png" alt="Apply for CareCredit (opens in a new tab)" sizes="300px" />
+        </a>
+      </div>
+    </div>
+  </section>
+  <Testimonials alt />
+  <CtaBox title="Do you have any questions, comments, or concerns?" />
+  <TreatYourself text="Your happiness is our priority. Talk to one of our experienced providers about how we can help you look and feel rejuvenated." image="2022/09/cosmetic-banner.jpg" />
+</Base>
+<style>
+  .fin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+  .fin-card { padding: clamp(28px, 4vw, 50px); border: 1px solid #eee; text-align: center; display: flex; flex-direction: column; align-items: center; scroll-margin-top: 120px; }
+  .fin-card p { color: var(--muted); max-width: 460px; }
+  .cherry-btn, .cc-link { display: inline-block; margin-top: auto; transition: transform .3s var(--ease-out); }
+  .cherry-btn:hover, .cc-link:hover { transform: translateY(-2px); }
+  .cherry-btn :global(img) { width: 240px; height: auto; }
+  .cc-link :global(img) { width: 300px; max-width: 100%; height: auto; }
+  @media (max-width: 767px) { .fin-grid { grid-template-columns: 1fr; } }
+</style>

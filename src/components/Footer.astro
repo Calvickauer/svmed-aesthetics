@@ -1,0 +1,46 @@
+---
+import Img from './Img.astro';
+import Icon from './Icon.astro';
+import { SITE, u, mailto, telHref, INSTAGRAM } from '../lib/site';
+const year = new Date().getFullYear();
+const links = [
+  ['Home', '/'], ['About Us', '/about-us/'], ['Services', '/services/'], ['CoolSculpting', '/services/coolsculptings/'],
+  ['Online Store', SITE.store], ['Financing', '/financing/'], ['Contact Us', '/contact-us/'],
+];
+---
+<footer class="site-footer">
+  <div class="wrap f-top">
+    <div>
+      <a href={u('/')} aria-label={`${SITE.name} – home`}><Img src="2022/09/svm.png" alt={SITE.name} class="f-logo" sizes="150px" /></a>
+      <p>For {SITE.years}, {SITE.name} has been helping people look and feel their best.<br />With a combination of aesthetic treatments we will help you achieve a natural rejuvenated result.</p>
+      <a class="sq-btn" href={SITE.instagram} target="_blank" rel="noopener" aria-label="Instagram (opens in a new tab)"><Icon name="instagram" /></a>
+    </div>
+    <div>
+      <h2>Quick Links</h2>
+      <ul class="f-links">
+        {links.map(([l, h]) => <li><a href={u(h)} {...(h.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {})}>{l}</a></li>)}
+      </ul>
+    </div>
+    <div class="f-office">
+      <h2>Our Office</h2>
+      <address>{SITE.address.street}<br />{SITE.address.city}, {SITE.address.region} {SITE.address.zip}</address>
+      <p><em><a href={mailto}>{SITE.email}</a></em><br /><em><a href={telHref}>{SITE.phone}</a></em></p>
+    </div>
+    <div>
+      <h2>Facebook</h2>
+      <a href={SITE.facebook} target="_blank" rel="noopener" aria-label="Salinas Valley Medical Aesthetics on Facebook (opens in a new tab)">
+        <Img src="2025/08/Facebook_Logo_Secondary.png" alt="" class="fb-logo" sizes="44px" />
+      </a>
+      <h2 style="margin-top:34px">Instagram</h2>
+      <ul class="ig-grid">
+        {INSTAGRAM.map((p) => (
+          <li><a href={p.href} target="_blank" rel="noopener" aria-label={`Instagram reel: ${p.alt} (opens in a new tab)`}><Img src={p.img} alt="" sizes="62px" /></a></li>
+        ))}
+      </ul>
+      <a class="ig-follow" href={SITE.instagram} target="_blank" rel="noopener"><Icon name="instagram" /> Follow on Instagram</a>
+    </div>
+  </div>
+  <div class="f-bottom">
+    <div class="wrap"><p>© Copyright <span data-year>{year}</span> {SITE.name}. All rights reserved.</p></div>
+  </div>
+</footer>

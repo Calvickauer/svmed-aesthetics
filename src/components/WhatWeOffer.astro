@@ -1,0 +1,19 @@
+---
+import Carousel from './Carousel.astro';
+import SvcCard from './SvcCard.astro';
+import { SERVICE_CARDS } from '../lib/site';
+interface Props { current?: string; eyebrow?: string; title?: string; includeCoolTone?: boolean }
+const { current = '', eyebrow = 'What We Offer', title = 'Services', includeCoolTone = false } = Astro.props;
+const cards = SERVICE_CARDS.filter((c) => c.href !== current && (includeCoolTone || c.title !== 'CoolTone' || current.startsWith('/services/coolsculptings/')));
+---
+<section class="section section-alt" aria-labelledby="offer-h">
+  <div class="wrap">
+    <div class="sec-head center" data-reveal>
+      <p class="eyebrow">{eyebrow}</p>
+      <h2 id="offer-h">{title}</h2>
+    </div>
+    <Carousel label={title} class="offer">
+      {cards.map((c) => <li><SvcCard {...c} /></li>)}
+    </Carousel>
+  </div>
+</section>

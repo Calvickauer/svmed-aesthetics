@@ -1,0 +1,63 @@
+---
+import Base from '../../layouts/Base.astro';
+import Banner from '../../components/Banner.astro';
+import Stars from '../../components/Stars.astro';
+import Icon from '../../components/Icon.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import TreatYourself from '../../components/TreatYourself.astro';
+import { GOOGLE_REVIEWS, SITE } from '../../lib/site';
+const reviewsUrl = `https://search.google.com/local/reviews?placeid=${SITE.googlePlaceId}`;
+const writeUrl = `https://search.google.com/local/writereview?placeid=${SITE.googlePlaceId}`;
+const initials = (n: string) => n.split(/\s+/).map((p) => p[0]).slice(0, 2).join('');
+---
+<Base title="Testimonials" description="Read what patients say about Salinas Valley Medical Aesthetics in Salinas, CA: Google reviews and testimonials about our providers and results.">
+  <Banner title="Testimonials" image="2022/12/testimonal.png" crumbs={[{ label: 'Testimonials' }]} />
+  <section class="section" aria-labelledby="g-h">
+    <div class="wrap">
+      <div class="sec-head center" data-reveal>
+        <p class="eyebrow">Salinas Valley Medical Aesthetics</p>
+        <h2 id="g-h">What people are saying</h2>
+      </div>
+      <div class="g-head" data-reveal>
+        <Icon name="google" class="g-logo" />
+        <div>
+          <p class="g-name">{SITE.name}</p>
+          <p class="g-count"><a href={reviewsUrl} target="_blank" rel="noopener">{SITE.googleReviewCount} Google reviews<span class="sr-only"> (opens in a new tab)</span></a></p>
+        </div>
+        <a class="btn btn-sm" href={writeUrl} target="_blank" rel="noopener">Write a review<span class="sr-only"> on Google (opens in a new tab)</span></a>
+      </div>
+      <ul class="g-list" role="list">
+        {GOOGLE_REVIEWS.map((r, i) => (
+          <li class="g-card" data-reveal style={`--d:${(i % 3) * 80}ms`}>
+            <div class="g-top">
+              <span class="g-av" aria-hidden="true">{initials(r.name)}</span>
+              <div><p class="g-author">{r.name}</p><Stars /></div>
+            </div>
+            <p class="g-text">{r.text}</p>
+            <p class="g-src"><Icon name="google" class="g-mini" /> Posted on Google</p>
+          </li>
+        ))}
+      </ul>
+      <p class="g-note">A selection of reviews posted on Google. <a href={reviewsUrl} target="_blank" rel="noopener">Read all reviews on Google<span class="sr-only"> (opens in a new tab)</span></a>.</p>
+    </div>
+  </section>
+  <Testimonials alt />
+  <TreatYourself title="Beautiful, Natural Results" text="Your happiness is our priority. Talk to one of our experienced providers about how we can help you look and feel rejuvenated." image="2022/09/cosmetic-banner.jpg" />
+</Base>
+<style>
+  .g-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 18px 28px; padding: 26px; border: 1px solid #eee; max-width: 720px; margin: 0 auto 40px; }
+  .g-head :global(.g-logo) { width: 44px; height: 44px; }
+  .g-name { font: 700 18px var(--f-head); margin: 0 0 4px; color: var(--ink); }
+  .g-count { margin: 4px 0 0; font-size: 15px; }
+  .g-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  .g-card { background: #fff; border: 1px solid #eee; padding: 24px; display: flex; flex-direction: column; }
+  .g-top { display: flex; gap: 14px; align-items: center; margin-bottom: 14px; }
+  .g-av { width: 42px; height: 42px; border-radius: 50%; background: var(--slate); color: #fff; display: grid; place-items: center; font: 700 15px var(--f-head); flex: none; }
+  .g-author { margin: 0; font-weight: 700; color: var(--ink); }
+  .g-text { flex: 1; font-size: 15px; }
+  .g-src { margin: 10px 0 0; font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+  .g-src :global(.g-mini) { width: 16px; height: 16px; }
+  .g-note { text-align: center; margin-top: 30px; color: var(--muted); font-size: 14px; }
+  @media (max-width: 991px) { .g-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 600px) { .g-list { grid-template-columns: 1fr; } }
+</style>

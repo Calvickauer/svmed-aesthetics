@@ -1,0 +1,28 @@
+---
+import Base from '../../layouts/Base.astro';
+import Banner from '../../components/Banner.astro';
+import { SITE, telHref } from '../../lib/site';
+---
+<Base title="Book Appointment" description="Book your appointment online at Salinas Valley Medical Aesthetics in Salinas, CA. Choose your treatment and time; we will confirm by text message." ogImage="2023/06/natural.png">
+  <Banner title="Book Appointment" image="2022/12/testimonal.png" crumbs={[{ label: 'Book Appointment' }]} />
+  <section class="section" aria-labelledby="ra-h">
+    <div class="wrap wrap-narrow center">
+      <h2 id="ra-h" data-reveal>Request Appointment</h2>
+      <p data-reveal>We must approve your appointment. Once your appointment is approved, you will receive a confirmation via text message. If the time you want is not available, please call the office to schedule at <a href={telHref}>{SITE.phone}</a>. Thank you.</p>
+      <p class="ra-actions">
+        <a class="btn" href={SITE.booking} target="_blank" rel="noopener">Book Online with Square<span class="sr-only"> (opens in a new tab)</span></a>
+        <a class="btn btn-outline" href={telHref}>Call {SITE.phone}</a>
+      </p>
+    </div>
+    <div class="wrap">
+      <div class="sq-frame">
+        <iframe src={SITE.bookingWidget} title="Book an appointment with Salinas Valley Medical Aesthetics (Square Appointments)" loading="lazy" allow="payment"></iframe>
+      </div>
+    </div>
+  </section>
+</Base>
+<style>
+  .ra-actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin: 26px 0 40px; }
+  .sq-frame { max-width: 980px; margin: 0 auto; border: 1px solid #eee; background: #fafafa; }
+  .sq-frame iframe { display: block; width: 100%; height: clamp(720px, 110vh, 1100px); border: 0; }
+</style>

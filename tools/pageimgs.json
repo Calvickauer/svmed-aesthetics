@@ -1,0 +1,249 @@
+{
+ "about-us": {
+  "path": "/about-us/",
+  "banner": null,
+  "extra": [
+   "assets/2022/12/about-us.jpg",
+   "assets/2023/07/contact-us.jpg"
+  ]
+ },
+ "about-us__meet-the-team": {
+  "path": "/about-us/meet-the-team/",
+  "banner": "assets/2025/09/Office-.png",
+  "extra": []
+ },
+ "about-us__meet-the-team__luz-reules": {
+  "path": "/about-us/meet-the-team/luz-reules/",
+  "banner": "assets/2022/12/team-banner.png",
+  "extra": []
+ },
+ "about-us__meet-the-team__michael-daniels-rn": {
+  "path": "/about-us/meet-the-team/michael-daniels-rn/",
+  "banner": "assets/2022/12/team-banner.png",
+  "extra": []
+ },
+ "about-us__meet-the-team__rachel-bojka": {
+  "path": "/about-us/meet-the-team/rachel-bojka/",
+  "banner": "assets/2022/12/team-banner.png",
+  "extra": []
+ },
+ "about-us__meet-the-team__teresa-mcmillin": {
+  "path": "/about-us/meet-the-team/teresa-mcmillin/",
+  "banner": "assets/2022/12/team-banner.png",
+  "extra": []
+ },
+ "about-us__meet-the-team__veronica-santa-cruz": {
+  "path": "/about-us/meet-the-team/veronica-santa-cruz/",
+  "banner": "assets/2022/12/team-banner.png",
+  "extra": []
+ },
+ "before-after": {
+  "path": "/before-after/",
+  "banner": "assets/2025/08/ChatGPT-Image-Aug-19-2025-03_20_42-PM.png",
+  "extra": []
+ },
+ "contact-us": {
+  "path": "/contact-us/",
+  "banner": null,
+  "extra": [
+   "assets/2022/12/contact-us.png"
+  ]
+ },
+ "current-promotions": {
+  "path": "/current-promotions/",
+  "banner": null,
+  "extra": [
+   "assets/2023/03/PromoPagePDF.pdf"
+  ]
+ },
+ "financing": {
+  "path": "/financing/",
+  "banner": "assets/2022/12/financing.png",
+  "extra": []
+ },
+ "financing__cherry-payment-plans": {
+  "path": "/financing/cherry-payment-plans/",
+  "banner": "assets/2022/12/financing.png",
+  "extra": []
+ },
+ "home": {
+  "path": "/",
+  "banner": null,
+  "extra": [
+   "assets/2022/11/89677-1.png",
+   "assets/2022/11/89677.png",
+   "assets/2022/11/89678-1.png",
+   "assets/2022/11/89678.png",
+   "assets/2022/12/banner-1.png",
+   "assets/2022/12/filler.png",
+   "assets/2022/12/filler2.png",
+   "assets/2022/12/filler5.png",
+   "assets/2022/12/thread.png",
+   "assets/2023/07/contact-us.jpg",
+   "assets/2025/08/vinoth-ragunathan-cvQ6wD3bPYE-unsplash.jpg"
+  ]
+ },
+ "request-appointment": {
+  "path": "/request-appointment/",
+  "banner": "assets/2022/12/testimonal.png",
+  "extra": []
+ },
+ "services": {
+  "path": "/services/",
+  "banner": "assets/2022/12/service-banner.png",
+  "extra": [
+   "assets/2022/09/Halo-Laser-Treatments-Los-Angeles-Rejuva.jpeg",
+   "assets/2022/09/laser-treatments-bbl-broad-band-light-LA.jpeg",
+   "assets/2022/10/90907.jpg",
+   "assets/2022/10/90908.jpg",
+   "assets/2022/10/90909.jpg",
+   "assets/2022/10/90910.jpg",
+   "assets/2022/10/90911.jpg",
+   "assets/2022/11/5.png",
+   "assets/2022/11/6.png",
+   "assets/2022/11/89677-1.png",
+   "assets/2022/11/89677.png",
+   "assets/2022/11/89678-1.png",
+   "assets/2022/11/89678.png",
+   "assets/2022/11/filter1.png",
+   "assets/2022/11/filter2.png"
+  ]
+ },
+ "services__biostimulators": {
+  "path": "/services/biostimulators/",
+  "banner": "assets/2023/06/bio-banner.jpg",
+  "extra": []
+ },
+ "services__coolsculptings": {
+  "path": "/services/coolsculptings/",
+  "banner": "assets/2022/12/loseweightfast.jpg",
+  "extra": [
+   "assets/2022/12/coolsculptin1.png",
+   "assets/2022/12/coolsculptin5.png",
+   "assets/2022/12/coolsculpting2.png",
+   "assets/2022/12/coolsculpting3.png",
+   "assets/2022/12/coolsculpting4.png",
+   "assets/2024/07/cherry-hero-02.jpg"
+  ]
+ },
+ "services__coolsculptings__cool-tone": {
+  "path": "/services/coolsculptings/cool-tone/",
+  "banner": "assets/2025/09/CoolTone-NewPage-Headerv2.jpg",
+  "extra": []
+ },
+ "services__dermal-fillers": {
+  "path": "/services/dermal-fillers/",
+  "banner": "assets/2022/12/fillers.jpeg",
+  "extra": [
+   "assets/2022/12/filler.png",
+   "assets/2022/12/filler2.png",
+   "assets/2022/12/filler5.png",
+   "assets/2023/07/filler3s.png",
+   "assets/2023/07/filler4.jpg"
+  ]
+ },
+ "services__laser-hair-removal": {
+  "path": "/services/laser-hair-removal/",
+  "banner": "assets/2022/12/hair-removal.jpg",
+  "extra": []
+ },
+ "services__laser-skin-rejuvenation": {
+  "path": "/services/laser-skin-rejuvenation/",
+  "banner": "assets/2022/12/laser-skin-resurfacing.jpg",
+  "extra": []
+ },
+ "services__microneedling": {
+  "path": "/services/microneedling/",
+  "banner": "assets/2022/12/botox.png",
+  "extra": []
+ },
+ "services__neuromodulators": {
+  "path": "/services/neuromodulators/",
+  "banner": "assets/2022/12/botox.png",
+  "extra": [
+   "assets/2022/11/5.png",
+   "assets/2022/11/6.png",
+   "assets/2022/11/filter1.png",
+   "assets/2022/11/filter2.png"
+  ]
+ },
+ "services__pdo-threads": {
+  "path": "/services/pdo-threads/",
+  "banner": "assets/2022/12/thread.png",
+  "extra": []
+ },
+ "services__prf-hair-restoration": {
+  "path": "/services/prf-hair-restoration/",
+  "banner": "assets/2023/06/Microneedling-Header-new.jpg",
+  "extra": []
+ },
+ "services__prf-plasma-rejuvenation": {
+  "path": "/services/prf-plasma-rejuvenation/",
+  "banner": "assets/2025/08/ChatGPT-Image-Aug-19-2025-04_32_03-PM.png",
+  "extra": []
+ },
+ "services__radio-frequency-microneedling": {
+  "path": "/services/radio-frequency-microneedling/",
+  "banner": "assets/2023/06/banners.png",
+  "extra": [
+   "assets/2023/06/1.png",
+   "assets/2023/06/2.png",
+   "assets/2023/06/3.png"
+  ]
+ },
+ "skin-care": {
+  "path": "/skin-care/",
+  "banner": "assets/2022/12/skincares.jpg",
+  "extra": []
+ },
+ "skin-care__alastins": {
+  "path": "/skin-care/alastins/",
+  "banner": "assets/2022/12/skincare.png",
+  "extra": []
+ },
+ "skin-care__colorscience": {
+  "path": "/skin-care/colorscience/",
+  "banner": "assets/2022/12/color.jpg",
+  "extra": []
+ },
+ "skin-care__epicutis": {
+  "path": "/skin-care/epicutis/",
+  "banner": "assets/2022/12/skincare.png",
+  "extra": []
+ },
+ "skin-care__noon-aesthetics": {
+  "path": "/skin-care/noon-aesthetics/",
+  "banner": "assets/2022/12/skincare.png",
+  "extra": []
+ },
+ "skin-care__obagi": {
+  "path": "/skin-care/obagi/",
+  "banner": "assets/2022/12/Model_WithLogo.jpg",
+  "extra": [
+   "assets/2022/11/89677-1.png",
+   "assets/2022/11/89678-1.png",
+   "assets/2023/07/89675.jpg",
+   "assets/2023/07/baseline-1.jpg"
+  ]
+ },
+ "skin-care__skin-medica": {
+  "path": "/skin-care/skin-medica/",
+  "banner": "assets/2022/12/skincare.png",
+  "extra": []
+ },
+ "skin-care__skinbetter": {
+  "path": "/skin-care/skinbetter/",
+  "banner": "assets/2022/12/skincare.png",
+  "extra": []
+ },
+ "skin-care__skinceuticals": {
+  "path": "/skin-care/skinceuticals/",
+  "banner": "assets/2022/12/skincare.png",
+  "extra": []
+ },
+ "testimonials": {
+  "path": "/testimonials/",
+  "banner": "assets/2022/12/testimonal.png",
+  "extra": []
+ }
+}

@@ -1,0 +1,29 @@
+---
+import Img from './Img.astro';
+import { u } from '../lib/site';
+interface Props { title?: string; text?: string }
+const { title = 'Now Available: Cherry Payment Plans!', text = 'Get treated now and pay over time with Cherry.' } = Astro.props;
+---
+<section class="section" style="padding-top:0" aria-labelledby="cherry-h">
+  <div class="wrap">
+    <div class="cherry" data-reveal>
+      <div class="cherry-media"><Img src="2024/07/cherry-hero-02.jpg" alt="Cherry payment plan app on two phones" sizes="(min-width: 1440px) 1320px, 100vw" /></div>
+      <div class="cherry-copy">
+        <h2 id="cherry-h">{title}</h2>
+        <p>{text}</p>
+        <a class="btn btn-outline-light" href={u('/financing/cherry-payment-plans/')}>Learn more &amp; Apply</a>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .cherry { position: relative; isolation: isolate; overflow: hidden; border-radius: 2px; background: #3a3f46; color: #fff; }
+  .cherry-media :global(img) { width: 100%; height: auto; aspect-ratio: 1920 / 600; object-fit: cover; object-position: left center; }
+  .cherry-copy { position: absolute; inset: 0 0 0 auto; width: min(56%, 560px); display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end; text-align: right; padding: clamp(20px, 3vw, 40px); background: linear-gradient(90deg, rgba(38, 39, 45, 0) 0%, rgba(38, 39, 45, 0.55) 30%, rgba(38, 39, 45, 0.8) 100%); }
+  .cherry h2 { color: #fff; text-transform: uppercase; font-size: clamp(24px, 2.4vw, 34px); letter-spacing: 0.4px; margin: 0 0 8px; text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35); }
+  .cherry p { margin: 0 0 18px; }
+  @media (max-width: 767px) {
+    .cherry-media :global(img) { aspect-ratio: 16 / 9; }
+    .cherry-copy { position: static; width: auto; align-items: flex-start; text-align: left; background: #26272d; padding: 24px 22px 28px; }
+  }
+</style>

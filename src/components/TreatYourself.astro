@@ -1,0 +1,24 @@
+---
+import Img from './Img.astro';
+import { u } from '../lib/site';
+interface Props { title?: string; text?: string; cta?: string; href?: string; image?: string; light?: boolean }
+const {
+  title = 'Treat Yourself',
+  text = 'Want more information? Call us today and speak with our knowledgeable staff or schedule a consultation with one of our providers.',
+  cta = 'Contact Us',
+  href = '/contact-us/',
+  image = '2022/12/pro-banner.jpg',
+} = Astro.props;
+---
+<section class="section" aria-label={title}>
+  <div class="wrap">
+    <div class="treat" data-reveal>
+      <div class="treat-media"><Img src={image} alt="" sizes="(min-width: 1440px) 1320px, 100vw" /></div>
+      <div class="treat-copy">
+        <h2>{title}</h2>
+        <p>{text}</p>
+        <a class="btn btn-outline" href={u(href)}>{cta}</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+{
+  "name": "Salinas Valley Medical Aesthetics",
+  "short_name": "SVMA",
+  "icons": [
+    {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#9bb24d",
+  "background_color": "#ffffff",
+  "display": "browser",
+  "start_url": "."
+}

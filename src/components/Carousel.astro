@@ -1,0 +1,16 @@
+---
+// Scroll-snap carousel: fully usable without JS (swipe/scroll); JS adds prev/next + dots.
+import Icon from './Icon.astro';
+interface Props { label: string; class?: string; style?: string }
+const { label, class: cls, style } = Astro.props;
+---
+<div class:list={['carousel', cls]} style={style} data-carousel role="region" aria-roledescription="carousel" aria-label={label}>
+  <ul class="carousel-track" data-track>
+    <slot />
+  </ul>
+  <div class="carousel-nav" hidden data-nav>
+    <button class="carousel-btn" type="button" data-prev aria-label="Previous slide"><Icon name="left" /></button>
+    <div class="dots" data-dots></div>
+    <button class="carousel-btn" type="button" data-next aria-label="Next slide"><Icon name="right" /></button>
+  </div>
+</div>

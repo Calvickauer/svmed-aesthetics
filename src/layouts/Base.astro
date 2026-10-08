@@ -1,0 +1,103 @@
+---
+import '@fontsource/source-sans-3/latin-400.css';
+import '@fontsource/source-sans-3/latin-600.css';
+import '@fontsource/source-sans-3/latin-700.css';
+import '@fontsource/varela/latin-400.css';
+import '@fontsource/playfair-display/latin-400.css';
+import '../styles/global.css';
+import ssHead from '@fontsource/source-sans-3/files/source-sans-3-latin-700-normal.woff2?url';
+import varela from '@fontsource/varela/files/varela-latin-400-normal.woff2?url';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE, u } from '../lib/site';
+import { pick } from '../lib/img';
+
+interface Props {
+  title: string; // short page title, e.g. "Dermal Fillers"
+  description?: string | null;
+  ogImage?: string | null; // image path relative to /images
+  fullTitle?: string;
+  cherry?: boolean; // floating Cherry estimator (lazy); off on the Cherry page itself
+  jsonLd?: Record<string, unknown>[];
+  preload?: string; // LCP image URL hint (optional)
+}
+const { title, description, ogImage, fullTitle, cherry = true, jsonLd = [] } = Astro.props;
+const pageTitle = fullTitle ?? `${title} - Best Cosmetic Dermatologist Near Salinas, CA`;
+const desc =
+  description ||
+  `${SITE.name} in Salinas, CA, offers trusted aesthetic treatments to help you look and feel your best with natural, rejuvenated results.`;
+// Path without the deploy base, e.g. "/services/dermal-fillers/"
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const path = Astro.url.pathname.startsWith(base) ? Astro.url.pathname.slice(base.length) || '/' : Astro.url.pathname;
+const CANON = (import.meta.env.PUBLIC_CANONICAL_ORIGIN || SITE.url).replace(/\/$/, '');
+const canonical = CANON + path;
+const siteOrigin = (Astro.site?.toString() || '').replace(/\/$/, '');
+const abs = (p: string) => (p.startsWith('http') ? p : siteOrigin + p);
+const og = abs(pick(ogImage || '2022/09/cosmetic-banner.jpg', 1200));
+const noindex = import.meta.env.PUBLIC_NOINDEX === 'true';
+
+const business = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalBusiness',
+  '@id': CANON + '/#business',
+  name: SITE.name,
+  alternateName: SITE.short,
+  url: CANON + '/',
+  telephone: '+1-' + SITE.phone,
+  email: SITE.email,
+  image: abs(pick('2022/09/svm.png', 1280)),
+  logo: abs(pick('2022/09/svm.png', 640)),
+  description: `${SITE.name} is an aesthetics practice in Salinas, CA, serving the community for ${SITE.years}: Botox®, dermal fillers, CoolSculpting®, laser treatments, microneedling, PDO threads and medical-grade skin care.`,
+  address: { '@type': 'PostalAddress', streetAddress: SITE.address.street, addressLocality: SITE.address.city, addressRegion: SITE.address.region, postalCode: SITE.address.zip, addressCountry: SITE.address.country },
+  geo: { '@type': 'GeoCoordinates', latitude: SITE.geo.lat, longitude: SITE.geo.lng },
+  openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '09:00', closes: '17:00' }],
+  hasMap: SITE.directions,
+  sameAs: [SITE.facebook, SITE.instagram],
+  areaServed: ['Salinas', 'Monterey County', 'Central Coast'],
+};
+const ld = [business, ...jsonLd];
+---
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>document.documentElement.classList.replace('no-js','js')</script>
+    <title>{pageTitle}</title>
+    <meta name="description" content={desc} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href={u("/favicon.ico")} sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="32x32" href={u("/favicon-32x32.png")} />
+    <link rel="icon" type="image/png" sizes="16x16" href={u("/favicon-16x16.png")} />
+    <link rel="apple-touch-icon" href={u('/apple-touch-icon.png')} />
+    <link rel="manifest" href={u('/site.webmanifest')} />
+    <link rel="preload" href={ssHead} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={varela} as="font" type="font/woff2" crossorigin />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={og} />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="sitemap" href={u('/sitemap.xml')} />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <slot name="head" />
+    <script type="application/ld+json" set:html={JSON.stringify(ld.length === 1 ? ld[0] : ld)} />
+  </head>
+  <body data-cherry={cherry ? 'float' : 'off'} data-ga={SITE.ga4} data-cherry-slug={SITE.cherrySlug}>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header path={path} />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <Footer />
+    <button class="to-top" type="button" aria-label="Back to top" data-to-top>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 15l-6-6-6 6" /></svg>
+    </button>
+    <script>import '../scripts/main.ts';</script>
+  </body>
+</html>

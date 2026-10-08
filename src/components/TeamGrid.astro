@@ -1,0 +1,24 @@
+---
+import Img from './Img.astro';
+import Icon from './Icon.astro';
+import { u } from '../lib/site';
+type M = { name: string; role: string; img: string; href?: string; instagram?: string };
+interface Props { members: M[]; cols4?: boolean; headingLevel?: 'h3' | 'h2' }
+const { members, cols4 = false } = Astro.props;
+---
+<ul class:list={['team-grid', { 'cols-4': cols4 }]} role="list" style="list-style:none;padding:0;margin:0">
+  {members.map((m, i) => (
+    <li class="member" data-reveal style={`--d:${(i % 4) * 90}ms`}>
+      {m.href ? (
+        <a class="member-photo" href={u(m.href)} tabindex="-1" aria-hidden="true"><Img src={m.img} alt="" sizes="(min-width: 992px) 290px, (min-width: 420px) 45vw, 260px" /></a>
+      ) : (
+        <div class="member-photo"><Img src={m.img} alt={`${m.name}, ${m.role}`} sizes="(min-width: 992px) 290px, (min-width: 420px) 45vw, 260px" /></div>
+      )}
+      <h3>{m.href ? <a href={u(m.href)}>{m.name}</a> : m.name}</h3>
+      <p class="role">{m.role}</p>
+      {m.instagram && (
+        <a class="ig-dot" href={m.instagram} target="_blank" rel="noopener" aria-label={`${m.name} on Instagram (opens in a new tab)`}><Icon name="instagram" /></a>
+      )}
+    </li>
+  ))}
+</ul>

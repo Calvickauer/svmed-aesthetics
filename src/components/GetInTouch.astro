@@ -1,0 +1,35 @@
+---
+import Img from './Img.astro';
+import Icon from './Icon.astro';
+import { SITE, mailto, telHref } from '../lib/site';
+interface Props { bg?: string }
+const { bg = '2025/08/vinoth-ragunathan-cvQ6wD3bPYE-unsplash.jpg' } = Astro.props;
+---
+<section class="touch" aria-labelledby="touch-h">
+  <div class="touch-bg"><Img src={bg} alt="" sizes="100vw" /></div>
+  <div class="wrap center">
+    <p class="eyebrow" style="color:#fff">Contact Us</p>
+    <h2 id="touch-h">Get in Touch</h2>
+    <span class="hr" aria-hidden="true"></span>
+    <div class="touch-cards">
+      <div class="touch-card" data-reveal>
+        <Icon name="pin" />
+        <h3>Our Address</h3>
+        <p>30 Central Ave.<br />Salinas, CA 93901</p>
+        <a class="go" href={SITE.directions} target="_blank" rel="noopener">Directions</a>
+      </div>
+      <div class="touch-card" data-reveal style="--d:90ms">
+        <Icon name="phone" />
+        <h3>Our Phone</h3>
+        <p>{SITE.phone}</p>
+        <a class="go" href={telHref}>Call Us</a>
+      </div>
+      <div class="touch-card" data-reveal style="--d:180ms">
+        <Icon name="mail" />
+        <h3>Our Email</h3>
+        <p>{SITE.email}</p>
+        <a class="go" href={mailto}>Send Message</a>
+      </div>
+    </div>
+  </div>
+</section>

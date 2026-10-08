@@ -1,0 +1,80 @@
+---
+// Generic template for service, skin-care brand and team-bio pages (content in src/content/pages).
+import { getCollection, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Banner from '../components/Banner.astro';
+import Img from '../components/Img.astro';
+import WhatWeOffer from '../components/WhatWeOffer.astro';
+import BrandsWeLove from '../components/BrandsWeLove.astro';
+import TreatYourself from '../components/TreatYourself.astro';
+import CherryBanner from '../components/CherryBanner.astro';
+import Carousel from '../components/Carousel.astro';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('pages');
+  return pages.map((p) => ({ params: { slug: p.data.path.replace(/^\/|\/$/g, '') }, props: { entry: p } }));
+}
+const { entry } = Astro.props;
+const d = entry.data;
+const { Content } = await render(entry);
+
+const crumbs =
+  d.kind === 'service'
+    ? d.path.startsWith('/services/coolsculptings/cool-tone/')
+      ? [{ label: 'Services', href: '/services/' }, { label: 'CoolSculpting®', href: '/services/coolsculptings/' }, { label: d.title }]
+      : [{ label: 'Services', href: '/services/' }, { label: d.title }]
+    : d.kind === 'brand'
+      ? [{ label: 'Skin Care', href: '/skin-care/' }, { label: d.title }]
+      : [{ label: 'About Us', href: '/about-us/' }, { label: 'Meet The Team', href: '/about-us/meet-the-team/' }, { label: d.title }];
+const svcLd = d.kind === 'service' ? [{
+  '@context': 'https://schema.org', '@type': 'MedicalProcedure', name: d.title, description: d.description ?? undefined,
+  procedureType: 'https://schema.org/NoninvasiveProcedure',
+}] : [];
+const crumbLd = [{
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: [{ name: 'Home', path: '/' }, ...crumbs.map((c: any) => ({ name: c.label, path: c.href ?? d.path }))].map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: 'https://svmedaesthetics.com' + c.path })),
+}];
+---
+<Base title={d.metaTitle} description={d.description} ogImage={d.ogImage || d.banner} jsonLd={[...svcLd, ...crumbLd]}>
+  <Banner title={d.title} image={d.banner} crumbs={crumbs} />
+
+  {d.kind === 'team' ? (
+    <section class="section">
+      <div class="wrap bio">
+        <div class="prose" data-reveal><Content /></div>
+        {d.portrait && (
+          <div class="portrait" data-reveal style="--d:120ms">
+            <Img src={d.portrait} alt={`${d.title} at Salinas Valley Medical Aesthetics`} sizes="(min-width: 900px) 40vw, 92vw" />
+          </div>
+        )}
+      </div>
+    </section>
+  ) : (
+    <section class="section">
+      <div class="wrap">
+        <article class:list={['prose', { brand: d.kind === 'brand' }]}><Content /></article>
+      </div>
+    </section>
+  )}
+
+  {d.gallery.length > 0 && (
+    <section class="section" style="padding-top:0" aria-label="Before and after photos">
+      <div class="wrap">
+        <Carousel label="Before and after photos" class="ba-strip">
+          {d.gallery.map((g) => <li><Img src={g} alt="Before and after treatment results" sizes="(min-width: 992px) 320px, (min-width: 600px) 45vw, 80vw" /></li>)}
+        </Carousel>
+      </div>
+    </section>
+  )}
+
+  {d.kind === 'service' && <WhatWeOffer current={d.path} />}
+  {d.kind === 'brand' && <BrandsWeLove current={d.path} />}
+  {d.cherryBanner && <div style="padding-top:80px"><CherryBanner title="Treat now, pay later" text="Cherry is a payment plan designed for your health, beauty, and wellness needs and procedures and allows you to make convenient monthly payments." /></div>}
+  {d.kind === 'service' && <TreatYourself />}
+</Base>
+<style is:global>
+  .ba-strip { --card-w: calc((100% - 3 * 20px) / 4); }
+  .ba-strip li { display: flex; align-items: center; }
+  @media (max-width: 991px) { .ba-strip { --card-w: calc((100% - 20px) / 2); } }
+  @media (max-width: 560px) { .ba-strip { --card-w: 82%; } }
+</style>

@@ -1,0 +1,18 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Banner from '../../../components/Banner.astro';
+import TeamGrid from '../../../components/TeamGrid.astro';
+import Testimonials from '../../../components/Testimonials.astro';
+import TreatYourself from '../../../components/TreatYourself.astro';
+import { TEAM_FULL } from '../../../lib/site';
+---
+<Base title="Meet the Team" description="The Salinas Valley Medical Aesthetics team understands that aesthetic care is about much more than just looking good. Meet our providers and staff in Salinas, CA." ogImage="2025/09/Office-.png">
+  <Banner title="Meet The Team" image="2025/09/Office-.png" sub="The Salinas Valley Medical Aesthetics team understands that aesthetic care is about much more than just looking good." crumbs={[{ label: 'About Us', href: '/about-us/' }, { label: 'Meet the Team' }]} />
+  <section class="section" aria-label="Our team">
+    <div class="wrap">
+      <TeamGrid members={TEAM_FULL} cols4 />
+    </div>
+  </section>
+  <Testimonials alt />
+  <TreatYourself title="Beautiful, Natural Results" text="Your happiness is our priority. Talk to one of our experienced providers about how we can help you look and feel rejuvenated." image="2022/09/cosmetic-banner.jpg" />
+</Base>

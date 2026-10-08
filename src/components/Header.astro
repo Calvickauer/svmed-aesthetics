@@ -1,0 +1,84 @@
+---
+import Img from './Img.astro';
+import { NAV, u, SITE, type NavItem } from '../lib/site';
+interface Props { path: string }
+const { path } = Astro.props;
+const isActive = (it: NavItem): boolean => {
+  if (it.external) return false;
+  if (it.href === '/') return path === '/';
+  if (it.label === 'CoolSculpting®' && !it.children) return path.startsWith('/services/coolsculptings/');
+  if (it.href === '/services/') return path.startsWith('/services/') && !path.startsWith('/services/coolsculptings/');
+  return path.startsWith(it.href.replace(/#.*/, ''));
+};
+const cur = (href: string) => (href === path ? 'page' : undefined);
+---
+<header class="site-header" data-header>
+  <div class="hdr-top">
+    <a href={u('/')} class="logo" aria-label={`${SITE.name} – home`}>
+      <Img src="2022/09/svm.png" alt="" sizes="150px" priority />
+    </a>
+  </div>
+  <div class="hdr-bar">
+    <a href={u('/')} class="hdr-mini" aria-label={`${SITE.name} – home`} tabindex="-1">
+      <Img src="2022/09/svm.png" alt="" sizes="105px" priority />
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+        {NAV.map((it) => (
+          <li class:list={[{ 'has-sub': it.children, active: isActive(it) }]}>
+            <a href={u(it.href)} aria-current={cur(it.href)} {...(it.external ? { target: '_blank', rel: 'noopener' } : {})}>{it.label}</a>
+            {it.children && (
+              <ul class="sub">
+                {it.children.map((c) => (
+                  <li>
+                    <a href={u(c.href)} aria-current={cur(c.href)}>{c.label}</a>
+                    {c.children && (
+                      <ul class="sub">
+                        {c.children.map((g) => <li><a href={u(g.href)} aria-current={cur(g.href)}>{g.label}</a></li>)}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+    <div class="hdr-actions">
+      <a class="btn btn-sm" href={u('/request-appointment/')}>Book</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-open>
+        <span></span><b class="sr-only">Open menu</b>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu" data-menu>
+  <button class="mobile-close" type="button" data-menu-close><span class="sr-only">Close menu</span></button>
+  <nav aria-label="Mobile">
+    <ul>
+      {NAV.map((it, i) => (
+        <li style={`--i:${i}`}>
+          {it.children ? (
+            <details open={isActive(it) || undefined}>
+              <summary>{it.label}</summary>
+              <ul>
+                {it.href !== '/skin-care/' && <li><a href={u(it.href)}>{it.label === 'Services' ? 'All Services' : it.label === 'About Us' ? 'About Us' : it.label}</a></li>}
+                {it.children.map((c) => (
+                  <li>
+                    <a href={u(c.href)} aria-current={cur(c.href)}>{c.label}</a>
+                    {c.children && c.children.map((g) => <a href={u(g.href)} aria-current={cur(g.href)}>– {g.label}</a>)}
+                  </li>
+                ))}
+              </ul>
+            </details>
+          ) : (
+            <a href={u(it.href)} aria-current={cur(it.href)} {...(it.external ? { target: '_blank', rel: 'noopener' } : {})}>{it.label}</a>
+          )}
+        </li>
+      ))}
+      <li class="mm-cta" style={`--i:${NAV.length}`}><a class="btn" href={`tel:${SITE.tel}`}>Call {SITE.phone}</a></li>
+    </ul>
+  </nav>
+</div>

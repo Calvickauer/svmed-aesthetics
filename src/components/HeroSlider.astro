@@ -1,0 +1,128 @@
+---
+// Lightweight hero slider (replaces Slider Revolution): CSS crossfade + Ken Burns,
+// transform/opacity only. Slide 1 is the LCP image; slide 2's image is lazy (in a <template>).
+import Img from './Img.astro';
+import Icon from './Icon.astro';
+import { u } from '../lib/site';
+---
+<section class="hero" data-hero aria-roledescription="carousel" aria-label="Welcome">
+  <div class="hero-slide is-active first-paint" data-slide aria-roledescription="slide" aria-label="1 of 2">
+    <div class="hero-media"><Img src="2022/09/cosmetic-banner.jpg" alt="" sizes="100vw" priority style="object-position:72% center" /></div>
+    <div class="wrap hero-copy">
+      <h1 class="hero-title">Salinas Valley Medical <br />Aesthetics</h1>
+      <p class="hero-sub">Helping men and women of the central coast achieve <br />beautiful and natural results</p>
+      <div class="hero-btns">
+        <a class="btn" href={u('/request-appointment/')}>Book Appointment</a>
+        <a class="btn btn-ghost" href={u('/services/')}>Services</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-slide" data-slide aria-roledescription="slide" aria-label="2 of 2" hidden>
+    <template data-lazy-media><div class="hero-media"><Img src="2025/08/ChatGPT-Image-Aug-19-2025-04_32_03-PM.png" alt="" sizes="100vw" style="object-position:70% center" /></div></template>
+    <div class="wrap hero-copy">
+      <p class="hero-title">Salinas Valley Medical <br />Aesthetics</p>
+      <p class="hero-sub">Call our office today to see how we can help you <br />look and feel your best</p>
+      <div class="hero-btns">
+        <a class="btn" href={u('/request-appointment/')}>Book Appointment</a>
+        <a class="btn btn-ghost" href={u('/contact-us/')}>Contact Us</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-ctrl" hidden data-hero-ctrl>
+    <button type="button" class="hero-arrow" data-hero-prev aria-label="Previous slide"><Icon name="left" /></button>
+    <div class="hero-dots" data-hero-dots>
+      <button type="button" aria-label="Show slide 1" aria-current="true"></button>
+      <button type="button" aria-label="Show slide 2"></button>
+    </div>
+    <button type="button" class="hero-arrow" data-hero-next aria-label="Next slide"><Icon name="right" /></button>
+    <button type="button" class="hero-pause" data-hero-pause aria-label="Pause slideshow" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-pause" d="M8 5h3v14H8zM13 5h3v14h-3z" fill="currentColor" /><path class="i-play" d="M8 5l11 7-11 7z" fill="currentColor" /></svg>
+    </button>
+  </div>
+</section>
+
+<style>
+  .hero { position: relative; isolation: isolate; height: clamp(520px, 74vh, 780px); overflow: hidden; background: #8b9096; color: #fff; }
+  .hero-slide { position: absolute; inset: 0; display: flex; align-items: center; opacity: 0; transition: opacity 1.2s var(--ease); }
+  .hero-slide.is-active { opacity: 1; z-index: 1; }
+  .hero-slide[hidden] { display: none; }
+  .hero-media { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+  .hero-media :global(picture), .hero-media :global(img) { width: 100%; height: 100%; object-fit: cover; transform-origin: 70% 40%; }
+  .hero-slide.is-active .hero-media :global(img) { animation: kenburns 9s var(--ease) both; }
+  .hero-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(28, 33, 39, 0.62) 0%, rgba(28, 33, 39, 0.38) 45%, rgba(28, 33, 39, 0.05) 75%); }
+  .hero-copy { position: relative; }
+  .hero-title { font: 700 clamp(36px, 4.6vw, 58px)/1.08 Helvetica, Arial, var(--f-head); letter-spacing: -1px; color: #fff; margin: 0 0 28px; max-width: 640px; text-shadow: 0 2px 18px rgba(0, 0, 0, 0.2); }
+  .hero-sub { font-size: clamp(16px, 1.4vw, 19px); line-height: 1.6; margin: 0 0 38px; max-width: 560px; }
+  .hero-btns { display: flex; flex-wrap: wrap; gap: 16px 28px; }
+  .hero-btns .btn { font-size: 18px; padding: 12px 34px; }
+  .btn-ghost { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.85); }
+  .btn-ghost:hover { background: #fff; color: var(--ink-2); border-color: #fff; }
+  .is-active .hero-copy > * { animation: fadeUp 0.9s var(--ease-out) both; }
+  .is-active .hero-copy > :nth-child(2) { animation-delay: 0.12s; }
+  .is-active .hero-copy > :nth-child(3) { animation-delay: 0.24s; }
+  .hero-slide:first-child.is-active.first-paint .hero-copy > * { animation: none; }
+  .hero-ctrl { position: absolute; z-index: 3; left: 50%; bottom: 22px; transform: translateX(-50%); display: flex; align-items: center; gap: 10px; }
+  .hero-ctrl[hidden] { display: none; }
+  .hero-arrow, .hero-pause { width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.6); background: rgba(0, 0, 0, 0.25); color: #fff; display: grid; place-items: center; cursor: pointer; transition: background 0.3s; }
+  .hero-arrow:hover, .hero-pause:hover { background: rgba(0, 0, 0, 0.5); }
+  .hero-arrow :global(svg) { width: 16px; height: 16px; }
+  .hero-pause svg { width: 14px; height: 14px; }
+  .hero-pause .i-play { display: none; }
+  .hero-pause[aria-pressed='true'] .i-play { display: block; }
+  .hero-pause[aria-pressed='true'] .i-pause { display: none; }
+  .hero-dots { display: flex; gap: 4px; }
+  .hero-dots button { width: 26px; height: 26px; border: 0; background: transparent; padding: 0; cursor: pointer; display: grid; place-items: center; }
+  .hero-dots button::before { content: ''; width: 10px; height: 10px; border-radius: 50%; border: 2px solid #fff; transition: background 0.3s, transform 0.3s; }
+  .hero-dots button[aria-current='true']::before { background: #fff; transform: scale(1.1); }
+  @media (max-width: 767px) {
+    .hero { height: 580px; }
+    .hero-media::after { background: linear-gradient(180deg, rgba(28, 33, 39, 0.35), rgba(28, 33, 39, 0.65)); }
+    .hero-title br, .hero-sub br { display: none; }
+    .hero-slide { align-items: flex-end; padding-bottom: 96px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-slide.is-active .hero-media :global(img) { animation: none; }
+  }
+</style>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-hero]');
+  if (root) {
+    const slides = [...root.querySelectorAll<HTMLElement>('[data-slide]')];
+    const dots = [...root.querySelectorAll<HTMLButtonElement>('[data-hero-dots] button')];
+    const ctrl = root.querySelector<HTMLElement>('[data-hero-ctrl]')!;
+    const pauseBtn = root.querySelector<HTMLButtonElement>('[data-hero-pause]')!;
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let i = 0, timer = 0, paused = reduce, hover = false;
+    slides[0].classList.add('first-paint');
+    const prepare = () => {
+      for (const s of slides) {
+        const tpl = s.querySelector<HTMLTemplateElement>('template[data-lazy-media]');
+        if (tpl) { s.prepend(tpl.content.cloneNode(true)); tpl.remove(); }
+        s.hidden = false;
+      }
+      ctrl.hidden = false;
+    };
+    const show = (n: number) => {
+      slides[i].classList.remove('is-active', 'first-paint');
+      i = (n + slides.length) % slides.length;
+      slides[i].classList.add('is-active');
+      slides.forEach((s, k) => s.setAttribute('aria-hidden', String(k !== i)));
+      slides.forEach((s, k) => s.toggleAttribute('inert', k !== i));
+      dots.forEach((d, k) => d.setAttribute('aria-current', String(k === i)));
+    };
+    const schedule = () => { clearTimeout(timer); if (!paused && !hover && !document.hidden) timer = window.setTimeout(() => { show(i + 1); schedule(); }, 7000); };
+    const start = () => { prepare(); slides.forEach((s, k) => k && s.setAttribute('aria-hidden', 'true')); slides.forEach((s, k) => k && s.setAttribute('inert', '')); pauseBtn.setAttribute('aria-pressed', String(paused)); schedule(); };
+    // Wait until the page has loaded so slide 2 never competes with the LCP image.
+    if (document.readyState === 'complete') setTimeout(start, 1200); else addEventListener('load', () => setTimeout(start, 1200), { once: true });
+    root.querySelector('[data-hero-prev]')!.addEventListener('click', () => { show(i - 1); schedule(); });
+    root.querySelector('[data-hero-next]')!.addEventListener('click', () => { show(i + 1); schedule(); });
+    dots.forEach((d, k) => d.addEventListener('click', () => { show(k); schedule(); }));
+    pauseBtn.addEventListener('click', () => { paused = !paused; pauseBtn.setAttribute('aria-pressed', String(paused)); pauseBtn.setAttribute('aria-label', paused ? 'Play slideshow' : 'Pause slideshow'); schedule(); });
+    root.addEventListener('mouseenter', () => { hover = true; clearTimeout(timer); });
+    root.addEventListener('mouseleave', () => { hover = false; schedule(); });
+    root.addEventListener('focusin', () => { hover = true; clearTimeout(timer); });
+    root.addEventListener('focusout', () => { hover = false; schedule(); });
+    document.addEventListener('visibilitychange', schedule);
+  }
+</script>

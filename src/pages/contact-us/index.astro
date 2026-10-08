@@ -1,0 +1,136 @@
+---
+import Base from '../../layouts/Base.astro';
+import Img from '../../components/Img.astro';
+import Icon from '../../components/Icon.astro';
+import { SITE, mailto, telHref } from '../../lib/site';
+---
+<Base title="Contact Us" description="Contact Salinas Valley Medical Aesthetics at 30 Central Avenue, Salinas, CA 93901. Call 831-975-4175. Hours by appointment, Monday–Friday 9:00 am – 5:00 pm.">
+  <section class="banner left contact-banner" aria-labelledby="page-title">
+    <div class="banner-media"><Img src="2022/12/contact-us.png" alt="" sizes="100vw" priority imgClass="ken" /></div>
+    <div class="wrap banner-inner">
+      <h1 id="page-title">Want to Know More? <span>Reach out to us!</span></h1>
+      <ul class="c-facts" role="list">
+        <li><Icon name="phone" /><a href={telHref}>{SITE.phone}</a></li>
+        <li><Icon name="mail" /><a href={mailto}>{SITE.email}</a></li>
+        <li><Icon name="pin" /><a href={SITE.directions} target="_blank" rel="noopener">30 Central Avenue Salinas, CA 93901<span class="sr-only"> (directions, opens in a new tab)</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="form-h">
+    <div class="wrap contact-grid">
+      <div class="form-col">
+        <p class="eyebrow">Get In Touch</p>
+        <h2 id="form-h">Send Us a Message</h2>
+        <p>Please fill out the form below to send us a message. We will get back to you as soon as possible. We look forward to talking to you.</p>
+        <!--
+          Preview: form not connected yet.
+          This form intentionally has NO action endpoint and never submits anywhere.
+          onsubmit="return false" (even before the module script loads) plus the script below prevent
+          submission; the visitor is asked to call the office instead.
+          Connect a form backend here only after the practice approves one.
+        -->
+        <form class="c-form" id="contact-form" novalidate data-preview-form onsubmit="return false;">
+          <div class="row2">
+            <label>Your Name <span aria-hidden="true">*</span><input type="text" name="name" autocomplete="name" required /></label>
+            <label>Your Email <span aria-hidden="true">*</span><input type="email" name="email" autocomplete="email" required /></label>
+          </div>
+          <div class="row2">
+            <label>Phone<input type="tel" name="phone" autocomplete="tel" /></label>
+            <label>Subject<input type="text" name="subject" /></label>
+          </div>
+          <label>Your Message<textarea name="message" rows="6"></textarea></label>
+          <div class="hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="company" tabindex="-1" autocomplete="off" /></label></div>
+          <button type="submit" class="btn">Send Message</button>
+          <div class="form-msg" role="status" aria-live="polite" hidden></div>
+        </form>
+      </div>
+      <aside class="info-col" aria-label="Office hours and contact details">
+        <div class="hours">
+          <h2 class="h-small"><Icon name="clock" /> Hours</h2>
+          <p class="note">Hours by appointment only. Please call in advance as hours may vary.</p>
+          <dl>
+            {SITE.hours.map(([d, h]) => (<><dt>{d}</dt><dd>{h}</dd></>))}
+          </dl>
+        </div>
+        <ul class="c-list" role="list">
+          <li><strong>Address:</strong> 30 Central Avenue Salinas, CA 93901</li>
+          <li><strong>Phone:</strong> <a href={telHref}>{SITE.phone}</a></li>
+          <li><strong>E-mail:</strong> <a href={mailto}>{SITE.email}</a></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="map-sec" aria-label="Map">
+    <div class="map" data-map-src={SITE.mapsEmbed}>
+      <a class="map-ph" href={SITE.directions} target="_blank" rel="noopener">
+        <Icon name="pin" />
+        <span>30 Central Avenue, Salinas, CA 93901</span>
+        <span class="btn btn-sm">Open in Google Maps</span>
+      </a>
+    </div>
+  </section>
+</Base>
+
+<script>
+  // Preview: form not connected yet. Never submits; asks visitors to call instead.
+  const form = document.querySelector<HTMLFormElement>('form[data-preview-form]');
+  if (form) {
+    const msg = form.querySelector<HTMLElement>('.form-msg')!;
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      msg.hidden = false;
+      msg.innerHTML = 'Thanks for reaching out! Online messages aren’t available just yet. Please call us at <a href="tel:+18319754175">831-975-4175</a> and our team will be happy to help.';
+    });
+  }
+  // Lazy Google Map: inject the iframe only when it's about to scroll into view
+  const map = document.querySelector<HTMLElement>('.map[data-map-src]');
+  if (map && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some((en) => en.isIntersecting)) {
+        io.disconnect();
+        const f = document.createElement('iframe');
+        f.src = map.dataset.mapSrc!;
+        f.title = 'Map: Salinas Valley Medical Aesthetics, 30 Central Avenue, Salinas';
+        f.loading = 'lazy';
+        f.referrerPolicy = 'no-referrer-when-downgrade';
+        f.setAttribute('allowfullscreen', '');
+        map.append(f);
+      }
+    }, { rootMargin: '300px' });
+    io.observe(map);
+  }
+</script>
+
+<style>
+  .contact-banner h1 span { display: block; color: var(--green-400); }
+  .c-facts { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 10px; }
+  .c-facts li { display: flex; align-items: center; gap: 12px; font-size: clamp(17px, 1.6vw, 21px); }
+  .c-facts :global(svg) { width: 22px; height: 22px; color: var(--green-400); flex: none; }
+  .c-facts a { color: #fff; text-decoration: none; overflow-wrap: anywhere; }
+  .c-facts a:hover { text-decoration: underline; }
+  .contact-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: clamp(30px, 5vw, 70px); }
+  @media (max-width: 991px) { .contact-grid { grid-template-columns: 1fr; } }
+  .c-form { display: grid; gap: 18px; margin-top: 24px; }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 600px) { .row2 { grid-template-columns: 1fr; } }
+  .c-form label { display: grid; gap: 6px; font: 600 14px var(--f-head); color: var(--ink); }
+  .c-form input, .c-form textarea { font: 400 16px var(--f-body); padding: 13px 14px; border: 1px solid #cfd4d3; border-radius: 0; background: #fff; color: var(--ink); width: 100%; }
+  .c-form input:focus, .c-form textarea:focus { outline: 2px solid var(--green-btn); outline-offset: 1px; border-color: var(--green-btn); }
+  .c-form .btn { justify-self: start; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .form-msg { padding: 16px 18px; background: #f3f6ea; border-left: 4px solid var(--green-btn); color: var(--ink); }
+  .hours { background: var(--slate); color: #fff; padding: 30px; margin-bottom: 26px; }
+  .h-small { color: #fff; font-size: 20px; display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .h-small :global(svg) { width: 22px; height: 22px; }
+  .hours .note { color: #e8ecef; font-size: 14px; }
+  .hours dl { display: grid; grid-template-columns: auto 1fr; gap: 8px 16px; margin: 16px 0 0; }
+  .hours dt { font-weight: 600; } .hours dd { margin: 0; text-align: right; }
+  .c-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+  .c-list a { overflow-wrap: anywhere; }
+  .map { position: relative; height: 420px; background: #e9ece9; }
+  .map :global(iframe) { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .map-ph { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--ink); text-decoration: none; }
+  .map-ph :global(svg) { width: 36px; height: 36px; color: var(--green-text); }
+</style>

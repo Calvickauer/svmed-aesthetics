@@ -1,0 +1,10 @@
+---
+import { u } from '../lib/site';
+interface Props { title: string; text?: string; cta?: string; href?: string }
+const { title, text = 'Clicking on the “Contact Us” button takes you right to the contact form.', cta = 'Contact Us', href = '/contact-us/' } = Astro.props;
+---
+<div class="cta-box" data-reveal>
+  <h2>{title}</h2>
+  <p>{text}</p>
+  <a class="btn btn-sm" href={u(href)}>{cta}</a>
+</div>

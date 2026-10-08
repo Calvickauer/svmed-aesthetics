@@ -1,0 +1,73 @@
+---
+import Base from '../../layouts/Base.astro';
+import Banner from '../../components/Banner.astro';
+import Img from '../../components/Img.astro';
+import Carousel from '../../components/Carousel.astro';
+import CtaBox from '../../components/CtaBox.astro';
+import TreatYourself from '../../components/TreatYourself.astro';
+import { u } from '../../lib/site';
+const items = [
+  { t: 'Neuromodulators (Botox)', d: 'Botox and Dysport are the world’s most popular treatment for wrinkles.', img: '2022/11/botox-thumbnail.png', href: '/services/neuromodulators/' },
+  { t: 'Dermal Fillers', d: 'Dermal fillers are an easy and convenient way to enhance natural beauty and restore a youthful appearance.', img: '2022/11/dermal-fillers.jpg', href: '/services/dermal-fillers/' },
+  { t: 'Laser Hair Removal', d: 'Laser hair treatments use ultrathin laser light which affects the pigment in the root of the hair, preventing growth.', img: '2022/11/laser-hair-removal.jpg', href: '/services/laser-hair-removal/' },
+  { t: 'Laser Skin Rejuvenation', d: 'The latest technology for combination ablative and non-ablative laser treatments.', img: '2022/11/skin-rejuvenation.jpg', href: '/services/laser-skin-rejuvenation/' },
+  { t: 'Microneedling', d: 'Also known as collagen induction therapy, microneedling stimulates your skin to produce its own natural collagen.', img: '2022/11/microneedling.jpg', href: '/services/microneedling/' },
+  { t: 'PDO Threads', d: 'PDO (polydioxanone) sutures, or threads, are a revolutionary, non-invasive treatment used for skin lifting and tightening.', img: '2022/11/pdo-threads.jpg', href: '/services/pdo-threads/' },
+  { t: 'CoolSculpting', d: 'CoolSculpting® is an FDA-cleared fat-freezing system that eliminates extra body fat.', img: '2022/11/coolsculpting.jpg', href: '/services/coolsculptings/' },
+  { t: 'PRF Hair Restoration', d: 'Regrow your hair thicker and stronger with PRF hair treatments.', img: '2023/06/services.png', href: '/services/prf-hair-restoration/' },
+  { t: 'Biostimulators', d: 'Enhance your collagen for the most natural looking results.', img: '2023/06/natural.png', href: '/services/biostimulators/' },
+  { t: 'Radio Frequency Microneedling', d: 'Skin tightening & improve fine lines and scars with RF MN.', img: '2023/06/vector.png', href: '/services/radio-frequency-microneedling/' },
+];
+const ba = ['2022/10/90907.jpg', '2022/10/90908.jpg', '2022/10/90909.jpg', '2022/10/90910.jpg', '2022/10/90911.jpg', '2022/11/5.png', '2022/11/6.png', '2022/11/filter1.png', '2022/11/filter2.png', '2022/09/Halo-Laser-Treatments-Los-Angeles-Rejuva.jpeg', '2022/09/laser-treatments-bbl-broad-band-light-LA.jpeg'];
+---
+<Base title="Services" description="Helping men and women of the central coast achieve beautiful and natural results: Botox, dermal fillers, lasers, microneedling, PDO threads, CoolSculpting and more in Salinas, CA." ogImage="2022/12/service-banner.png">
+  <Banner title="Services" eyebrow="Salinas Valley Medical Aesthetics" image="2022/12/service-banner.png" align="left" sub="Helping men and women of the central coast achieve beautiful and natural results." crumbs={[{ label: 'Services' }]} />
+
+  <section class="section" aria-label="All services">
+    <div class="wrap">
+      <ul class="svc-list" role="list">
+        {items.map((s, i) => (
+          <li data-reveal style={`--d:${(i % 3) * 80}ms`}>
+            <a href={u(s.href)} class="svc-item">
+              <div class="svc-thumb"><Img src={s.img} alt="" sizes="(min-width: 992px) 360px, (min-width: 600px) 45vw, 92vw" /></div>
+              <h2><span class="num">{String(i + 1).padStart(2, '0')}.</span> {s.t}</h2>
+              <p>{s.d}</p>
+              <span class="text-link">Read More<span class="sr-only">: {s.t}</span></span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="ba-h">
+    <div class="wrap">
+      <div class="sec-head center" data-reveal><p class="eyebrow">Real Results</p><h2 id="ba-h">Before &amp; After</h2></div>
+      <Carousel label="Before and after results" class="svc-ba">
+        {ba.map((b) => <li><Img src={b} alt="Before and after treatment results" sizes="(min-width: 992px) 360px, (min-width: 600px) 45vw, 82vw" /></li>)}
+      </Carousel>
+    </div>
+  </section>
+
+  <CtaBox title="Have questions or are you ready to schedule your appointment? Contact us today!" />
+
+  <TreatYourself text="Your happiness is our priority. Talk to one of our experienced providers about how we can help you look and feel rejuvenated." image="2022/09/cosmetic-banner.jpg" />
+</Base>
+
+<style>
+  .svc-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 30px; }
+  .svc-item { display: flex; flex-direction: column; height: 100%; color: var(--ink); text-decoration: none; }
+  .svc-thumb { overflow: hidden; aspect-ratio: 3 / 2; margin-bottom: 22px; background: #f2f2f2; }
+  .svc-thumb :global(picture), .svc-thumb :global(img) { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease-out); }
+  .svc-item:hover .svc-thumb :global(img) { transform: scale(1.05); }
+  .svc-item h2 { font-size: 20px; margin-bottom: 10px; }
+  .svc-item:hover h2 { color: var(--green-text); }
+  .num { color: var(--green-text); }
+  .svc-item p { color: var(--muted); flex: 1; }
+  @media (max-width: 991px) { .svc-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 600px) { .svc-list { grid-template-columns: 1fr; } }
+  .svc-ba { --card-w: calc((100% - 2 * 20px) / 3); }
+  .svc-ba li { display: flex; align-items: center; }
+  @media (max-width: 991px) { .svc-ba { --card-w: calc((100% - 20px) / 2); } }
+  @media (max-width: 560px) { .svc-ba { --card-w: 82%; } }
+</style>

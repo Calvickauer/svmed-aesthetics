@@ -1,0 +1,11 @@
+---
+import Img from './Img.astro';
+import { u } from '../lib/site';
+interface Props { title: string; href: string; img: string; text?: string; sizes?: string }
+const { title, href, img, text, sizes = '(min-width: 992px) 420px, (min-width: 600px) 46vw, 84vw' } = Astro.props;
+---
+<a class="svc-card" href={u(href)}>
+  <Img src={img} alt="" sizes={sizes} />
+  <h3>{title}</h3>
+  {text && <p>{text}</p>}
+</a>

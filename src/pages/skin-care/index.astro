@@ -1,0 +1,51 @@
+---
+import Base from '../../layouts/Base.astro';
+import Banner from '../../components/Banner.astro';
+import Img from '../../components/Img.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import CtaBox from '../../components/CtaBox.astro';
+import TreatYourself from '../../components/TreatYourself.astro';
+import { u } from '../../lib/site';
+const brands = [
+  { t: 'Obagi', d: 'Obagi® skin care products unlock your skin’s maximum potential through clinical quality formulas.', img: '2023/06/obagi.png', href: '/skin-care/obagi/' },
+  { t: 'SkinCeuticals', d: 'SkinCeuticals makes one simple promise to provide advanced skincare backed by science.', img: '2023/06/skin.png', href: '/skin-care/skinceuticals/' },
+  { t: 'Colorescience', d: 'Colorescience makeup is meticulously formulated to include truly protective suncare and deeply nourishing skincare in every product.', img: '2023/06/colore.png', href: '/skin-care/colorscience/' },
+  { t: 'SkinMedica', d: 'Order your favorite products through our website.', img: '2023/06/skinmedica.png', href: '/skin-care/skin-medica/' },
+  { t: 'Alastin', d: 'New technology delivers a patented formula deep into the skin.', img: '2023/06/skincare.png', href: '/skin-care/alastins/' },
+  { t: 'SkinBetter', d: 'At SkinBetter, accomplished science represents the deep knowledge and rigorous study of skin and skincare chemistry.', img: '2023/06/skinbetter.png', href: '/skin-care/skinbetter/' },
+  { t: 'NOON Aesthetics', d: 'NOON Aesthetics™ is very popular in Europe and has recently made its way into the US market.', img: '2025/08/Noon-Aesthetics.png', href: '/skin-care/noon-aesthetics/' },
+  { t: 'Epicutis', d: 'Epicutis is a biotech company that is committed to delivering an effective daily skincare routine with 100% safe, non-toxic formulations that are EWG verified.', img: '2025/08/Epicutis_Logo_Vector_Black.60eecf8c.svg', href: '/skin-care/epicutis/' },
+];
+---
+<Base title="Skin Care" description="Medical-grade skin care in Salinas, CA: Obagi, SkinCeuticals, Colorescience, SkinMedica, Alastin, SkinBetter, NOON Aesthetics and Epicutis, recommended by our experienced providers." ogImage="2022/12/skincares.jpg">
+  <Banner title="Skin Care" image="2022/12/skincares.jpg" crumbs={[{ label: 'Skin Care' }]} />
+  <section class="section" aria-labelledby="brands-h">
+    <div class="wrap">
+      <div class="sec-head center" data-reveal><p class="eyebrow">Salinas Valley Medical Aesthetics</p><h2 id="brands-h">Brands We Love</h2></div>
+      <ul class="brand-grid" role="list">
+        {brands.map((b, i) => (
+          <li data-reveal style={`--d:${(i % 4) * 70}ms`}>
+            <a href={u(b.href)} class="brand-card">
+              <div class="logo"><Img src={b.img} alt={b.t} sizes="240px" /></div>
+              <p>{b.d}</p>
+              <span class="text-link">Read More<span class="sr-only"> about {b.t}</span></span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+  <Testimonials alt />
+  <CtaBox title="If you have any questions, concerns, or comments regarding Salinas Valley Medical Aesthetics!" />
+  <TreatYourself title="Beautiful, Natural Results" text="Your happiness is our priority. Talk to one of our experienced providers about how we can help you look and feel rejuvenated." image="2022/09/cosmetic-banner.jpg" />
+</Base>
+<style>
+  .brand-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+  .brand-card { display: flex; flex-direction: column; align-items: center; text-align: center; height: 100%; padding: 30px 24px; border: 1px solid #eee; color: var(--ink); text-decoration: none; transition: box-shadow .4s, transform .4s var(--ease-out); }
+  .brand-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -28px rgba(0,0,0,.35); }
+  .logo { height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+  .logo :global(img) { max-height: 110px; width: auto; max-width: 220px; object-fit: contain; }
+  .brand-card p { color: var(--muted); font-size: 15px; flex: 1; }
+  @media (max-width: 991px) { .brand-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 520px) { .brand-grid { grid-template-columns: 1fr; } }
+</style>

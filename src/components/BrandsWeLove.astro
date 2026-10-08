@@ -1,0 +1,23 @@
+---
+import SvcCard from './SvcCard.astro';
+import { BRAND_CARDS } from '../lib/site';
+interface Props { current: string }
+const cards = BRAND_CARDS[Astro.props.current] ?? [];
+---
+{cards.length > 0 && (
+  <section class="section" aria-labelledby="brands-h">
+    <div class="wrap">
+      <div class="sec-head center" data-reveal>
+        <p class="eyebrow">What We Offer</p>
+        <h2 id="brands-h">Brands We Love</h2>
+      </div>
+      <ul class="brand-pair" role="list">
+        {cards.map((c) => <li data-reveal><SvcCard {...c} sizes="(min-width: 768px) 560px, 92vw" /></li>)}
+      </ul>
+    </div>
+  </section>
+)}
+<style>
+  .brand-pair { list-style: none; margin: 0 auto; padding: 0; display: grid; gap: 20px; grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 1120px; }
+  @media (max-width: 600px) { .brand-pair { grid-template-columns: 1fr; } }
+</style>

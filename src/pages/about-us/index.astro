@@ -1,0 +1,84 @@
+---
+import Base from '../../layouts/Base.astro';
+import Banner from '../../components/Banner.astro';
+import Img from '../../components/Img.astro';
+import TreatYourself from '../../components/TreatYourself.astro';
+import TeamGrid from '../../components/TeamGrid.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import GetInTouch from '../../components/GetInTouch.astro';
+import { TEAM, SITE, u } from '../../lib/site';
+const tiles = [
+  { t: 'Lift & Volumize', d: 'With our collection of dermal fillers.', href: '/services/dermal-fillers/' },
+  { t: 'Hydrate & Tone', d: 'Your skin with our top of the line skin care brands.', href: '/skin-care/' },
+  { t: 'Smooth & Soften', d: 'Your fine lines and wrinkles with our neuromodulators.', href: '/services/neuromodulators/' },
+];
+---
+<Base title="About Us" description="Salinas Valley Medical Aesthetics is a highly respected aesthetics practice in Salinas, California, serving men and women of the central coast for over 12 years." ogImage="2025/09/Group-Photo.jpg">
+  <Banner title="Salinas Valley Medical Aesthetics" image="2022/12/about-us.jpg" align="left" crumbs={[{ label: 'About Us' }]}>
+    <p><a class="btn" href={u('/contact-us/')}>Contact Us</a></p>
+  </Banner>
+
+  <div class="wrap refresh-wrap">
+    <div class="refresh" data-reveal>
+      <h2>Refresh &amp; Rejuvenate</h2>
+      <p>With our collection of dermal fillers &amp; neuromodulators, and our skin care treatments &amp; products.</p>
+    </div>
+  </div>
+
+  <section class="section" aria-labelledby="about-h">
+    <div class="wrap about-grid">
+      <div data-reveal>
+        <p class="eyebrow">Medical Aesthetics</p>
+        <h2 id="about-h">About Salinas Valley Medical Aesthetics</h2>
+        <p>Salinas Valley Medical Aesthetics is a highly respected aesthetics practice, serving the community for {SITE.years}. The SVMA team focuses on natural-looking aesthetic care that highlights your unique features, while gently enhancing your natural beauty.</p>
+        <p>Our experienced providers can recommend a wide range of treatments including Botox®, CoolSculpting®, Juvéderm® fillers, microneedling and a variety of laser services. Treatment plans are fully customized and the goal is to look refreshed, rejuvenated and youthful. The best results are undetectable and natural.</p>
+        <p>The Salinas Valley Medical Aesthetics team understands that aesthetic care is about much more than just looking good – it’s also about feeling good and confident.</p>
+        <p>To get expert-level care in a friendly, supportive, and welcoming environment, call our office to schedule an appointment today.</p>
+      </div>
+      <div data-reveal style="--d:120ms">
+        <Img src="2025/09/Group-Photo.jpg" alt="The Salinas Valley Medical Aesthetics team" sizes="(min-width: 992px) 520px, 92vw" class="about-photo" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt tiles-sec" aria-label="Treatments">
+    <div class="wrap tiles">
+      {tiles.map((t, i) => (
+        <div class="tile" data-reveal style={`--d:${i * 90}ms`}>
+          <h3>{t.t}</h3>
+          <p>{t.d}</p>
+          <a class="text-link" href={u(t.href)}>Discover More<span class="sr-only">: {t.t}</span></a>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <TreatYourself text="Ready to look and feel your best? Book your appointment online today." cta="Book Appointment" href="/request-appointment/" image="2022/09/cosmetic-banner.jpg" />
+
+  <section class="section" aria-labelledby="team-h">
+    <div class="wrap">
+      <div class="sec-head center" data-reveal><h2 id="team-h">Meet The Team</h2></div>
+      <TeamGrid members={TEAM} cols4 />
+      <p class="center" style="margin-top:36px"><a class="btn" href={u('/about-us/meet-the-team/')}>Meet All</a></p>
+    </div>
+  </section>
+
+  <Testimonials title="What Clients Say About Us" layout="center" two alt />
+
+  <GetInTouch bg="2023/07/contact-us.jpg" />
+</Base>
+
+<style>
+  .refresh-wrap { position: relative; z-index: 2; }
+  .refresh { background: var(--slate); color: #fff; max-width: 560px; margin: -70px 0 0 auto; padding: 36px 40px; box-shadow: 0 20px 50px -30px rgba(0,0,0,.5); }
+  .refresh h2 { color: #fff; font-size: clamp(24px, 2.4vw, 30px); margin-bottom: 10px; }
+  .refresh p { color: #eef1f4; margin: 0; }
+  @media (max-width: 767px) { .refresh { margin: -40px 0 0; padding: 28px 24px; } }
+  .about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(30px, 5vw, 70px); align-items: center; }
+  @media (max-width: 991px) { .about-grid { grid-template-columns: 1fr; } }
+  .tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  .tile { background: #fff; padding: 40px 32px; text-align: center; border-bottom: 3px solid var(--green-400); }
+  .tile h3 { font-size: 22px; margin-bottom: 12px; }
+  .tile p { color: var(--muted); }
+  @media (max-width: 767px) { .tiles { grid-template-columns: 1fr; } }
+</style>

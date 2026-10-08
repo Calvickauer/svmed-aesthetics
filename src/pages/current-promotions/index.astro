@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import Banner from '../../components/Banner.astro';
+import { SITE, telHref, u } from '../../lib/site';
+---
+<Base title="Current Promotions" description="Check back soon for new promotions and events at Salinas Valley Medical Aesthetics in Salinas, CA.">
+  <Banner title="Current Promotions" image="2022/09/cosmetic-banner.jpg" crumbs={[{ label: 'Current Promotions' }]} />
+  <section class="section" aria-labelledby="promo-h">
+    <div class="wrap wrap-narrow center promo">
+      <p class="eyebrow">Welcome</p>
+      <h2 id="promo-h">Please check back soon for new promotions and events!</h2>
+      <p>Thanks for visiting! In the meantime, book your next appointment online or give us a call.</p>
+      <p class="promo-actions">
+        <a class="btn" href={u('/request-appointment/')}>Book Appointment</a>
+        <a class="btn btn-outline" href={telHref}>Call {SITE.phone}</a>
+      </p>
+    </div>
+  </section>
+</Base>
+<style>
+  .promo { padding: 20px 0 30px; }
+  .promo-actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 28px; }
+</style>

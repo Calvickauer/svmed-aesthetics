@@ -1,0 +1,54 @@
+---
+import Img from './Img.astro';
+import Carousel from './Carousel.astro';
+import Stars from './Stars.astro';
+import Icon from './Icon.astro';
+import { TESTIMONIALS, SITE } from '../lib/site';
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  layout?: 'split' | 'center';
+  two?: boolean;
+  alt?: boolean;
+  rating?: boolean;
+}
+const {
+  eyebrow = 'Testimonials',
+  title = 'Salinas Valley Medical Aesthetics always appreciates feedback from our valued patients.',
+  layout = 'split', two = false, alt = false, rating = true,
+} = Astro.props;
+const reviewsUrl = `https://search.google.com/local/reviews?placeid=${SITE.googlePlaceId}`;
+---
+<section class:list={['section', { 'section-alt': alt }]} style={alt ? undefined : 'background:var(--surface-warm)'} aria-labelledby="testi-h">
+  <div class="wrap">
+    <div class:list={[{ testi: layout === 'split' }]}>
+      <div class:list={['testi-head', { 'center sec-head': layout === 'center' }]} data-reveal>
+        <p class="eyebrow">{eyebrow}</p>
+        <h2 id="testi-h">{title}</h2>
+        {rating && (
+          <a class="rating-card" href={reviewsUrl} target="_blank" rel="noopener">
+            <span style="display:flex;align-items:center;gap:6px"><Icon name="google" class="g-ic" /> Google reviews</span>
+            <Stars />
+            <span>{SITE.googleReviewCount} reviews</span>
+          </a>
+        )}
+        <slot name="side" />
+      </div>
+      <Carousel label="Patient testimonials" class:list={['testi-slider', { two }]}>
+        {TESTIMONIALS.map((t) => (
+          <li>
+            <figure class="quote">
+              <Img src="2022/09/png-transparent-computer-icons-woman-avatar-avatar-girl-thumbnail.png" alt="" class="avatar" sizes="90px" />
+              <blockquote><p>{t.text}</p></blockquote>
+              <figcaption>– {t.name}</figcaption>
+            </figure>
+          </li>
+        ))}
+      </Carousel>
+    </div>
+  </div>
+</section>
+<style>
+  :global(.g-ic) { width: 18px; height: 18px; }
+  .testi-head .rating-card { margin-top: 10px; }
+</style>

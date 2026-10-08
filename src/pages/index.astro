@@ -1,0 +1,180 @@
+---
+import Base from '../layouts/Base.astro';
+import HeroSlider from '../components/HeroSlider.astro';
+import Img from '../components/Img.astro';
+import Icon from '../components/Icon.astro';
+import Carousel from '../components/Carousel.astro';
+import CherryBanner from '../components/CherryBanner.astro';
+import TreatYourself from '../components/TreatYourself.astro';
+import TeamGrid from '../components/TeamGrid.astro';
+import Testimonials from '../components/Testimonials.astro';
+import GetInTouch from '../components/GetInTouch.astro';
+import { TEAM, u } from '../lib/site';
+
+const icons = [
+  { t: 'Laser Skin Rejuvenation', d: 'The latest laser technology for resurfacing, collagen stimulation, and treating dark spots.', img: '2025/09/LASER-SKIN-REJUVENATION-Icon-v2.png', href: '/services/laser-skin-rejuvenation/' },
+  { t: 'Laser Hair Removal', d: 'Long term solution for unwanted hair.', img: '2025/09/LASER-HAIR-REMOVAL.png', href: '/services/laser-hair-removal/' },
+  { t: 'Neuromodulators (Botox)', d: 'Smooth and soften lines in the forehead, frown lines, and crow’s feet with neuromodulators.', img: '2025/09/botoxv2.png', href: '/services/neuromodulators/' },
+  { t: 'Dermal Fillers', d: 'Restore a youthful appearance and smooth lines with dermal fillers.', img: '2025/09/DERMAL_FILLERS.png', href: '/services/dermal-fillers/' },
+  { t: 'PDO Threads', d: 'Lift and smooth sagging skin and lower face laxity with PDO threads.', img: '2025/09/PDO-THREADSv2.png', href: '/services/pdo-threads/' },
+  { t: 'Microneedling', d: 'Refresh with microneedling with PRF or serum.', img: '2025/09/microneedlingv2.png', href: '/services/microneedling/' },
+  { t: 'CoolSculpting', d: 'Non-surgical fat reduction treatment.', img: '2025/09/coolsculptingv3.png', href: '/services/coolsculptings/' },
+];
+const ba = ['2022/11/89677.png', '2022/11/89678.png', '2022/12/filler.png', '2022/12/filler2.png', '2022/12/filler5.png', '2022/12/thread.png', '2022/12/banner-1.png'];
+---
+<Base
+  title="Home"
+  fullTitle="Home - Best Cosmetic Dermatologist Near Salinas, CA"
+  description="Salinas Valley Medical Aesthetics in Salinas, CA, offers trusted aesthetic treatments to help you look and feel your best with natural, rejuvenated results."
+  ogImage="2025/09/Group-Photo.jpg"
+>
+  <HeroSlider />
+
+  <section class="section intro" aria-labelledby="intro-h">
+    <div class="wrap wrap-narrow center">
+      <p class="eyebrow" data-reveal>Medical Aesthetics located in Salinas, CA</p>
+      <h2 id="intro-h" data-reveal>Salinas Valley Medical Aesthetics</h2>
+      <div data-reveal>
+        <p>Salinas Valley Medical Aesthetics is a highly respected aesthetics practice, serving the community for over 12 years. The SVMA team focuses on natural-looking aesthetic care that highlights your unique features, while gently enhancing your natural beauty.</p>
+        <p>Our experienced providers can recommend a wide range of treatments including Botox®, CoolSculpting®, Juvéderm®, microneedling and a variety of laser services. Treatment plans are fully customized and the goal is to look refreshed, rejuvenated and youthful. The best results are undetectable and natural.</p>
+      </div>
+      <div class="intro-photo" data-reveal>
+        <Img src="2025/09/Group-Photo.jpg" alt="The Salinas Valley Medical Aesthetics team" sizes="(min-width: 600px) 510px, 92vw" />
+      </div>
+      <div data-reveal>
+        <p>The Salinas Valley Medical Aesthetics team understands that aesthetic care is about much more than just looking good – it’s also about feeling good and confident.</p>
+        <p>To get expert-level care in a friendly, supportive, and welcoming environment, call our office to schedule an appointment today.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="best" aria-labelledby="best-h">
+    <div class="best-bg"><Img src="2023/07/contact-us.jpg" alt="" sizes="100vw" /></div>
+    <div class="wrap wrap-narrow center best-head">
+      <h2 id="best-h" data-reveal>Look and Feel Your Best</h2>
+      <p data-reveal>Our experienced providers will help formulate a personalized treatment plan just for you. We can recommend a combination of treatments to address your concerns and give you the beautiful results you deserve. Call our office to schedule today.</p>
+    </div>
+    <div class="wrap">
+      <div class="best-grid">
+        <div class="best-card brand" data-reveal><h3>Salinas Valley Medical Aesthetics</h3></div>
+        <div class="best-card" data-reveal style="--d:90ms">
+          <h3>Services</h3>
+          <p>Volumize<br />Lift<br />Smooth<br />Firm<br />Smile</p>
+          <a class="btn btn-sm" href={u('/services/')}>Read More<span class="sr-only"> about our services</span></a>
+        </div>
+        <div class="best-card" data-reveal style="--d:180ms">
+          <h3>Skin Care</h3>
+          <p>You can now order some of your favorite products through our online store and pick them up at our office. Visit our Store page to learn more. You can also order through our Skin Care brands pages to have products shipped directly to you.</p>
+          <a class="btn btn-sm" href={u('/skin-care/')}>Read More<span class="sr-only"> about skin care</span></a>
+        </div>
+        <div class="best-card" data-reveal style="--d:270ms">
+          <h3>Financing</h3>
+          <p>Learn more about our financing options and get 0% interest for up to 12 months. Apply online or in the office.</p>
+          <a class="btn btn-sm" href={u('/financing/')}>Read More<span class="sr-only"> about financing</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-label="Before and after results" style="padding-top:50px">
+    <div class="wrap">
+      <Carousel label="Before and after results" class="home-ba">
+        {ba.map((b) => <li><Img src={b} alt="Before and after treatment results" sizes="(min-width: 992px) 320px, (min-width: 600px) 45vw, 82vw" /></li>)}
+      </Carousel>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="svc-h">
+    <div class="wrap">
+      <div class="sec-head center" data-reveal>
+        <p class="eyebrow">Discover More</p>
+        <h2 id="svc-h">Services</h2>
+      </div>
+    </div>
+    <ul class="icon-grid" role="list">
+      {icons.map((s, i) => (
+        <li data-reveal style={`--d:${(i % 4) * 80}ms`}>
+          <a href={u(s.href)} class="icon-card">
+            <Img src={s.img} alt="" sizes="120px" class="icon-img" />
+            <h3>{s.t}</h3>
+            <p>{s.d}</p>
+            <span class="text-link">Read More</span>
+          </a>
+        </li>
+      ))}
+      <li class="inquire" data-reveal style="--d:240ms">
+        <a href={u('/contact-us/')} class="icon-card">
+          <Icon name="chat" class="chat-ic" />
+          <h3>Inquire</h3>
+          <p>It’s only natural to have questions about the experience.</p>
+          <span class="inq-link">Contact Us</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <CherryBanner />
+
+  <TreatYourself image="2022/09/cosmetic-banner.jpg" />
+
+  <section class="section section-alt" aria-labelledby="team-h">
+    <div class="wrap">
+      <div class="sec-head center" data-reveal>
+        <p class="eyebrow">What we offer</p>
+        <h2 id="team-h">Meet The Team</h2>
+      </div>
+      <TeamGrid members={TEAM} cols4 />
+    </div>
+  </section>
+
+  <Testimonials />
+
+  <GetInTouch />
+</Base>
+
+<style>
+  .intro h2 { margin-bottom: 26px; }
+  .intro-photo { max-width: 510px; margin: 36px auto 40px; }
+  .best { position: relative; isolation: isolate; padding-top: clamp(70px, 9vw, 110px); }
+  .best-bg { position: absolute; inset: 0 0 auto; height: min(560px, 72%); z-index: -1; overflow: hidden; background: #5b6a78; }
+  .best-bg :global(picture), .best-bg :global(img) { width: 100%; height: 120%; object-fit: cover; }
+  .best-bg::after { content: ''; position: absolute; inset: 0; background: rgba(55, 70, 88, 0.55); }
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .best-bg :global(img) { animation: parallax linear both; animation-timeline: view(); }
+      @keyframes parallax { from { transform: translateY(-8%); } to { transform: translateY(0); } }
+    }
+  }
+  .best-head { color: #fff; }
+  .best-head h2 { color: #fff; }
+  .best-head p { color: #f1f3f5; margin-bottom: 40px; }
+  .best-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: #fff; box-shadow: 0 30px 60px -40px rgba(0, 0, 0, 0.4); }
+  .best-card { padding: 40px 30px; border-left: 1px solid #eee; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+  .best-card h3 { font-size: 19px; margin-bottom: 14px; }
+  .best-card p { color: var(--muted); font-size: 14px; line-height: 1.75; }
+  .best-card.brand { background: var(--slate); border: 0; }
+  .best-card.brand h3 { color: #fff; font-size: clamp(24px, 2vw, 29px); line-height: 1.25; margin: 0; }
+  @media (max-width: 991px) { .best-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .best-card { border-top: 1px solid #eee; } }
+  @media (max-width: 560px) { .best-grid { grid-template-columns: 1fr; } .best-card.brand { padding: 30px; } }
+  .home-ba { --card-w: calc((100% - 3 * 20px) / 4); }
+  .home-ba li { display: flex; align-items: center; }
+  @media (max-width: 991px) { .home-ba { --card-w: calc((100% - 20px) / 2); } }
+  @media (max-width: 560px) { .home-ba { --card-w: 82%; } }
+  .icon-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid #f0f0f0; }
+  .icon-grid > li { border-right: 1px solid #f0f0f0; border-bottom: 1px solid #f0f0f0; }
+  .icon-card { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 44px 26px 40px; height: 100%; color: var(--ink); text-decoration: none; }
+  .icon-card :global(.icon-img) { width: 120px; height: 120px; margin-bottom: 26px; transition: transform 0.6s var(--ease-out); }
+  .icon-card:hover :global(.icon-img) { transform: translateY(-4px) scale(1.04); }
+  .icon-card h3 { font-size: 16px; text-transform: uppercase; letter-spacing: 0.2px; text-decoration: underline; text-decoration-color: var(--green-400); text-decoration-thickness: 2px; text-underline-offset: 6px; margin-bottom: 14px; }
+  .icon-card p { font-size: 14px; max-width: 290px; flex: 1; }
+  .icon-card:hover h3 { color: var(--green-text); }
+  .inquire { background: var(--slate); }
+  .inquire .icon-card { color: #fff; justify-content: center; }
+  .inquire h3 { color: #fff; text-decoration: none; text-transform: none; font-size: 18px; }
+  .inquire p { flex: 0; }
+  .inquire :global(.chat-ic) { width: 46px; height: 46px; color: #fff; margin-bottom: 18px; }
+  .inq-link { font: 600 15px var(--f-head); text-transform: uppercase; }
+  .inquire .icon-card:hover .inq-link { text-decoration: underline; }
+  @media (max-width: 991px) { .icon-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 480px) { .icon-grid { grid-template-columns: 1fr; } }
+</style>
