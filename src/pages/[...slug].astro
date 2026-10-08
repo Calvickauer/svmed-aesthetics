@@ -9,6 +9,8 @@ import BrandsWeLove from '../components/BrandsWeLove.astro';
 import TreatYourself from '../components/TreatYourself.astro';
 import CherryBanner from '../components/CherryBanner.astro';
 import Carousel from '../components/Carousel.astro';
+import { altFor } from '../data/alt';
+import { SITE } from '../lib/site';
 
 export async function getStaticPaths() {
   const pages = await getCollection('pages');
@@ -32,7 +34,7 @@ const svcLd = d.kind === 'service' ? [{
 }] : [];
 const crumbLd = [{
   '@context': 'https://schema.org', '@type': 'BreadcrumbList',
-  itemListElement: [{ name: 'Home', path: '/' }, ...crumbs.map((c: any) => ({ name: c.label, path: c.href ?? d.path }))].map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: 'https://svmedaesthetics.com' + c.path })),
+  itemListElement: [{ name: 'Home', path: '/' }, ...crumbs.map((c: any) => ({ name: c.label, path: c.href ?? d.path }))].map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: SITE.url + c.path })),
 }];
 ---
 <Base title={d.metaTitle} description={d.description} ogImage={d.ogImage || d.banner} jsonLd={[...svcLd, ...crumbLd]}>
@@ -61,7 +63,7 @@ const crumbLd = [{
     <section class="section" style="padding-top:0" aria-label="Before and after photos">
       <div class="wrap">
         <Carousel label="Before and after photos" class="ba-strip">
-          {d.gallery.map((g) => <li><Img src={g} alt="Before and after treatment results" sizes="(min-width: 992px) 320px, (min-width: 600px) 45vw, 80vw" /></li>)}
+          {d.gallery.map((g) => <li><Img src={g} alt={altFor(g)} sizes="(min-width: 992px) 320px, (min-width: 600px) 45vw, 80vw" /></li>)}
         </Carousel>
       </div>
     </section>

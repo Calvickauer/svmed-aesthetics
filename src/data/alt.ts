@@ -1,0 +1,38 @@
+// Descriptive alt text for photos reused in the before/after strips (home, services index, service pages).
+// Written from what each photo actually shows; keep in sync if a gallery image changes.
+export const ALT: Record<string, string> = {
+  '2022/11/89677.png': 'Skin care before and after: smoother, clearer skin on a woman’s face',
+  '2022/11/89678.png': 'Skin care before and after: fewer sun spots and more even skin tone',
+  '2022/11/89677-1.png': 'Obagi before and after: smoother, clearer skin on a woman’s face',
+  '2022/11/89678-1.png': 'Obagi before and after: fewer sun spots and more even skin tone',
+  '2023/07/89675.jpg': 'Obagi before and after: lighter dark patches on the cheek',
+  '2023/07/baseline-1.jpg': 'Obagi before and after: more even skin tone on a woman’s face',
+  '2022/12/filler.png': 'Nose filler before and after, side profile',
+  '2022/12/filler2.png': 'Nonsurgical rhinoplasty with dermal filler, before and after close-up of the nose',
+  '2022/12/filler5.png': 'Nose filler before and after, side profile of a woman',
+  '2023/07/filler3s.png': 'Lip filler before and after',
+  '2023/07/filler4.jpg': 'Lip filler before and after, fuller and more defined lips',
+  '2022/12/thread.png': 'PDO thread lift before and after, midface and lower face',
+  '2022/12/banner-1.png': 'The Salinas Valley Medical Aesthetics team in the office',
+  '2022/11/5.png': 'Botox Cosmetic before and after day 7: softer crow’s feet lines on a woman',
+  '2022/11/6.png': 'Botox Cosmetic before and after day 7: softer crow’s feet lines on a man',
+  '2022/11/filter1.png': 'Botox Cosmetic before and after day 7: smoother frown lines on a woman',
+  '2022/11/filter2.png': 'Botox Cosmetic before and after day 7: smoother frown lines on a man',
+  '2022/10/90907.jpg': 'Neuromodulator before and after, front view of a woman’s face',
+  '2022/10/90908.jpg': 'Botox Cosmetic before and after day 7: smoother frown lines',
+  '2022/10/90909.jpg': 'Botox Cosmetic before and after day 7: softer crow’s feet lines',
+  '2022/10/90910.jpg': 'Neuromodulator before and after, front view of a woman’s face',
+  '2022/10/90911.jpg': 'Frown lines before treatment and after at day 7, 90 and 120',
+  '2022/09/Halo-Laser-Treatments-Los-Angeles-Rejuva.jpeg': 'HALO laser before and after, smoother skin on the side of a woman’s face',
+  '2022/09/laser-treatments-bbl-broad-band-light-LA.jpeg': 'BBL laser before and after, less sun damage, side profile',
+  '2023/06/1.png': 'Virtue RF before and after: under-eye area after 1 ExactRF session',
+  '2023/06/2.png': 'Virtue RF before and after: neck and jawline after 3 SmartRF sessions',
+  '2023/06/3.png': 'Virtue RF before and after: abdomen skin after 2 DeepRF sessions',
+  '2022/12/coolsculptin1.png': 'CoolSculpting results, abdomen: before and after one session',
+  '2022/12/coolsculptin5.png': 'CoolSculpting results, back fat: before and after',
+  '2022/12/coolsculpting2.png': 'CoolSculpting results, abdomen: before and after',
+  '2022/12/coolsculpting3.png': 'CoolSculpting results, double chin: before and after',
+  '2022/12/coolsculpting4.png': 'CoolSculpting results, upper arm: before and after',
+};
+
+export const altFor = (src: string, fallback = 'Before and after treatment results') => ALT[src] ?? fallback;
