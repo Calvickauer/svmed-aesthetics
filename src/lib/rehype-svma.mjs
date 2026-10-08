@@ -33,10 +33,11 @@ export default function rehypeSvma({ base = '/' } = {}) {
 
   function walk(node, parent) {
     if (node.type === 'element') {
-      const p = node.properties || {};
+      let p = node.properties || {};
       if (node.tagName === 'img' && typeof p.src === 'string' && p.src.startsWith('img:')) {
         const pic = picture(p.src.slice(4), p.alt || '');
         Object.assign(node, pic);
+        p = node.properties; // don't restore the old img src/alt onto the new wrapper
       } else if (node.tagName === 'a' && typeof p.href === 'string') {
         if (/^\/(?!\/)/.test(p.href)) p.href = b + p.href;
         else if (/^https?:/.test(p.href)) { p.target = '_blank'; p.rel = ['noopener']; }
