@@ -66,8 +66,8 @@ const ba = ['2022/10/90907.jpg', '2022/10/90908.jpg', '2022/10/90909.jpg', '2022
   .svc-item p { color: var(--muted); flex: 1; }
   @media (max-width: 991px) { .svc-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 600px) { .svc-list { grid-template-columns: 1fr; } }
-  .svc-ba { --card-w: calc((100% - 2 * 20px) / 3); }
-  .svc-ba li { display: flex; align-items: center; }
-  @media (max-width: 991px) { .svc-ba { --card-w: calc((100% - 20px) / 2); } }
-  @media (max-width: 560px) { .svc-ba { --card-w: 82%; } }
+  :global(.svc-ba) { --card-w: calc((100% - 2 * 20px) / 3); }
+  :global(.svc-ba li) { display: flex; align-items: center; }
+  @media (max-width: 991px) { :global(.svc-ba) { --card-w: calc((100% - 20px) / 2); } }
+  @media (max-width: 560px) { :global(.svc-ba) { --card-w: 82%; } }
 </style>

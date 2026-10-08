@@ -156,10 +156,10 @@ const ba = ['2022/11/89677.png', '2022/11/89678.png', '2022/12/filler.png', '202
   .best-card.brand h3 { color: #fff; font-size: clamp(24px, 2vw, 29px); line-height: 1.25; margin: 0; }
   @media (max-width: 991px) { .best-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .best-card { border-top: 1px solid #eee; } }
   @media (max-width: 560px) { .best-grid { grid-template-columns: 1fr; } .best-card.brand { padding: 30px; } }
-  .home-ba { --card-w: calc((100% - 3 * 20px) / 4); }
-  .home-ba li { display: flex; align-items: center; }
-  @media (max-width: 991px) { .home-ba { --card-w: calc((100% - 20px) / 2); } }
-  @media (max-width: 560px) { .home-ba { --card-w: 82%; } }
+  :global(.home-ba) { --card-w: calc((100% - 3 * 20px) / 4); }
+  :global(.home-ba li) { display: flex; align-items: center; }
+  @media (max-width: 991px) { :global(.home-ba) { --card-w: calc((100% - 20px) / 2); } }
+  @media (max-width: 560px) { :global(.home-ba) { --card-w: 82%; } }
   .icon-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid #f0f0f0; }
   .icon-grid > li { border-right: 1px solid #f0f0f0; border-bottom: 1px solid #f0f0f0; }
   .icon-card { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 44px 26px 40px; height: 100%; color: var(--ink); text-decoration: none; }
