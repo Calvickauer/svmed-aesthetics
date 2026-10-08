@@ -9,7 +9,7 @@ import ssHead from '@fontsource/source-sans-3/files/source-sans-3-latin-700-norm
 import varela from '@fontsource/varela/files/varela-latin-400-normal.woff2?url';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE, u } from '../lib/site';
+import { SITE, NAV, u } from '../lib/site';
 import { pick } from '../lib/img';
 
 interface Props {
@@ -36,6 +36,9 @@ const abs = (p: string) => (p.startsWith('http') ? p : siteOrigin + p);
 const og = abs(pick(ogImage || '2022/09/cosmetic-banner.jpg', 1200));
 const noindex = import.meta.env.PUBLIC_NOINDEX === 'true';
 
+// Services offered (from the Services menu, incl. CoolTone), used for the MedicalBusiness offer catalog.
+const flat = (items: typeof NAV): typeof NAV => items.flatMap((i) => [i, ...flat(i.children ?? [])]);
+const services = flat(NAV.find((n) => n.href === '/services/')?.children ?? []);
 const business = {
   '@context': 'https://schema.org',
   '@type': 'MedicalBusiness',
@@ -54,6 +57,14 @@ const business = {
   hasMap: SITE.directions,
   sameAs: [SITE.facebook, SITE.instagram],
   areaServed: ['Salinas', 'Monterey County', 'Central Coast'],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Aesthetic treatments',
+    itemListElement: services.map((s) => ({
+      '@type': 'Offer',
+      itemOffered: { '@type': 'MedicalProcedure', name: s.label.replace(/®/g, ''), url: CANON + s.href },
+    })),
+  },
 };
 const ld = [business, ...jsonLd];
 ---
@@ -82,7 +93,12 @@ const ld = [business, ...jsonLd];
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={og} />
     <meta property="og:locale" content="en_US" />
+    <meta property="og:image:alt" content={`${SITE.name} – ${title}`} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={desc} />
+    <meta name="twitter:image" content={og} />
+    <meta name="twitter:image:alt" content={`${SITE.name} – ${title}`} />
     <link rel="sitemap" href={u('/sitemap.xml')} />
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <slot name="head" />
