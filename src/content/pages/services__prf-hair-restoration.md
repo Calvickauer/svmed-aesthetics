@@ -17,7 +17,7 @@ Hair loss affects at least 40% of men and women by the age of 35, and this can b
 
 Once you have a consultation with your provider and you decide to move forward with PRF hair restoration, the procedure takes approximately 30 minutes. Blood is drawn and prepared by spinning down all of the red cells. There are no additives or anything to dilute the PRF. The PRF is extracted and injected directly into the scalp at the level of the follicle with a very small needle. After just a few sessions, you will see thicker, stronger hair with less shedding.
 
-![](img:2025/08/image8.png)
+![PRF hair restoration before and after, top view of the scalp showing thicker hair](img:2025/08/image8-prf-hair.jpg)
 
 ###### Candidates for PRF Hair Restoration
 

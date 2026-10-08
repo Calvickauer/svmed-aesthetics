@@ -9,7 +9,8 @@ import TreatYourself from '../components/TreatYourself.astro';
 import TeamGrid from '../components/TeamGrid.astro';
 import Testimonials from '../components/Testimonials.astro';
 import GetInTouch from '../components/GetInTouch.astro';
-import { TEAM, u } from '../lib/site';
+import { TEAM, SITE, u } from '../lib/site';
+import { altFor } from '../data/alt';
 
 const icons = [
   { t: 'Laser Skin Rejuvenation', d: 'The latest laser technology for resurfacing, collagen stimulation, and treating dark spots.', img: '2025/09/LASER-SKIN-REJUVENATION-Icon-v2.png', href: '/services/laser-skin-rejuvenation/' },
@@ -35,7 +36,7 @@ const ba = ['2022/11/89677.png', '2022/11/89678.png', '2022/12/filler.png', '202
       <p class="eyebrow" data-reveal>Medical Aesthetics located in Salinas, CA</p>
       <h2 id="intro-h" data-reveal>Salinas Valley Medical Aesthetics</h2>
       <div data-reveal>
-        <p>Salinas Valley Medical Aesthetics is a highly respected aesthetics practice, serving the community for over 12 years. The SVMA team focuses on natural-looking aesthetic care that highlights your unique features, while gently enhancing your natural beauty.</p>
+        <p>Salinas Valley Medical Aesthetics is a highly respected aesthetics practice, serving the community for {SITE.years}. The SVMA team focuses on natural-looking aesthetic care that highlights your unique features, while gently enhancing your natural beauty.</p>
         <p>Our experienced providers can recommend a wide range of treatments including Botox®, CoolSculpting®, Juvéderm®, microneedling and a variety of laser services. Treatment plans are fully customized and the goal is to look refreshed, rejuvenated and youthful. The best results are undetectable and natural.</p>
       </div>
       <div class="intro-photo" data-reveal>
@@ -79,7 +80,7 @@ const ba = ['2022/11/89677.png', '2022/11/89678.png', '2022/12/filler.png', '202
   <section class="section section-alt" aria-label="Before and after results" style="padding-top:50px">
     <div class="wrap">
       <Carousel label="Before and after results" class="home-ba">
-        {ba.map((b) => <li><Img src={b} alt="Before and after treatment results" sizes="(min-width: 992px) 320px, (min-width: 600px) 45vw, 82vw" /></li>)}
+        {ba.map((b) => <li><Img src={b} alt={altFor(b)} sizes="(min-width: 992px) 320px, (min-width: 600px) 45vw, 82vw" /></li>)}
       </Carousel>
     </div>
   </section>

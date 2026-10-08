@@ -77,7 +77,7 @@ export const NAV = [
       { label: 'SkinCeuticals', href: '/skin-care/skinceuticals/' },
       { label: 'SkinMedica', href: '/skin-care/skin-medica/' },
       { label: 'SkinBetter', href: '/skin-care/skinbetter/' },
-      { label: 'Noon Aesthetics', href: '/skin-care/noon-aesthetics/' },
+      { label: 'NOON Aesthetics', href: '/skin-care/noon-aesthetics/' },
       { label: 'Epicutis', href: '/skin-care/epicutis/' },
     ],
   },
@@ -140,8 +140,8 @@ export const TESTIMONIALS = [
   { name: 'Grace E', text: 'I absolutely love this place, the entire staff is so welcoming, professional and knowledgeable. I’ve had a great experience with all the girls in the office from Diana who is the best with CoolSculpting, Rachel who went far past what I was hoping for with my fillers, to the super sweet girls up front. I am beyond happy with my results, I would not consider going anywhere else.' },
   { name: 'Marbelli T', text: 'Veronica definitely puts her heart into her work. My skin looks amazing. Thank you so much 🙂' },
   { name: 'Stephanie S', text: 'ALWAYS great results! Professional, friendly staff and I highly recommend a visit. They also carry very nice products.' },
-  { name: 'Marilyn M', text: 'I love going to Rachel and Teresa. they are so professional and amazing at what they do.' },
-  { name: 'Christianna K', text: 'Teresa is amazing! All staff in the office are so nice. Rachel did my PDO threads recently and was excellent. I didn’t even get a single bruise! Highly recommend Teresa and Racheal for any service.' },
+  { name: 'Marilyn M', text: 'I love going to Rachel and Teresa. They are so professional and amazing at what they do.' },
+  { name: 'Christianna K', text: 'Teresa is amazing! All staff in the office are so nice. Rachel did my PDO threads recently and was excellent. I didn’t even get a single bruise! Highly recommend Teresa and Rachel for any service.' },
 ];
 
 /** Snapshot of the Trustindex Google-reviews widget as rendered on 2026-10-07 (5 of 44 reviews shown by the widget). */

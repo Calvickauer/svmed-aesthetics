@@ -23,13 +23,13 @@ Call the office to book a visit today.
 Obagi® is a leading company in the skin care industry. The Obagi team creates skin care products that do more than correct skin flaws. They also help your skin become its healthiest and best, from the inside out. All Obagi products are scientifically backed, medical-grade products that you can only purchase from authorized providers. 
 By using quality skin care products like those in the Obagi line, you can achieve optimal skin health. Obagi products can help enhance laser skin rejuvenation treatments, and you can look great for longer after you have noninvasive cosmetic treatments like Botox® or dermal filler injections.
 
-![Obagi Medical](img:2022/11/84093.png)
+![Obagi Medical logo](img:2022/11/84093.png)
 
 ##### Which Obagi products help with aging or sun-damaged skin?
 
 Obagi Nu-Derm® is the skin care system that physicians most often dispense when patients need help with sun damage or aging skin problems like fine lines, age spots, and rough skin texture.
 
-![Skin care specialists](img:2022/11/89677.png)
+![Obagi before and after: smoother, clearer skin on a woman’s face](img:2022/11/89677.png)
 
 ##### Can Obagi products help with adult acne?
 
@@ -39,6 +39,6 @@ When you use Obagi acne products, it’s important to remember that these produc
 
 Ready to take the next step in skin rejuvenation? The Salinas Valley Medical Aesthetics team is here to help you find the Obagi products right for you. Book your appointment by phone or through the online scheduler today.
 
-For more information on Obagi products, click here.
+For more information on Obagi products, [click here](https://www.obagi.com/).
 
-![Skin treatments at Salinas](img:2022/11/89678.png)
+![Obagi before and after: fewer sun spots and more even skin tone](img:2022/11/89678.png)

@@ -52,7 +52,7 @@ Starting in your 20’s, you lose collagen and cannot produce it as efficiently.
 **A:** Sculptra is appropriate and ideal for anyone. It is a great preventative treatment, and is especially great for patients who want natural-looking, progressive results and who prefer long-lasting collagen stimulation rather than frequent filler treatments. Patients who are allergic to absorbable suture material (vicryl) are not candidates for Sculptra injections.
 
 **Q: How is Sculptra different from dermal fillers?** 
-**A:** Traditional dermal fillers provide immediate volume and is best for areas that  require volume restoration, while Sculptra stimulates your body to produce its own collagen, creating gradual and longer-lasting improvement in skin quality.
+**A:** Traditional dermal fillers provide immediate volume and are best for areas that require volume restoration, while Sculptra stimulates your body to produce its own collagen, creating gradual and longer-lasting improvement in skin quality.
 
 ###### Platelet Rich Fibrin (PRF)
 

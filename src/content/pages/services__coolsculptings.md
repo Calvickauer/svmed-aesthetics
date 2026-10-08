@@ -16,7 +16,7 @@ cherryBanner: true
 
 **Q: What is CoolSculpting?**
 
-A: CoolSculpting is a safe and proven effective fat reduction and body contouring technology. It is non-invasive, FDA-cleared treatment that uses controlled cooling to eliminate stubborn fat cells that resist diet and exercise. It’s a popular alternative to liposuction with no surgery and minimal downtime.
+A: CoolSculpting is a safe and proven effective fat reduction and body contouring technology. It is a non-invasive, FDA-cleared treatment that uses controlled cooling to eliminate stubborn fat cells that resist diet and exercise. It’s a popular alternative to liposuction with no surgery and minimal downtime.
 
 **Q: How does it work?**
 
@@ -37,7 +37,7 @@ The treatments are done in our comfortable CoolSculpting suite and will take any
 
 **Q: How many treatments do I need, and are the results permanent?**
 
-A: Most patients require two treatments, however some patients need an additional treatment for optimal results. Yes, the results are permanent. Once the fat cells are gone they will not come back. Maintaining a healthy lifestyle is essential to prevent the remaining fat cells from expanding.
+A: Most patients require two treatments; however, some patients need an additional treatment for optimal results. Yes, the results are permanent. Once the fat cells are gone they will not come back. Maintaining a healthy lifestyle is essential to prevent the remaining fat cells from expanding.
 
 **Q: What are the expected results?**
 
@@ -69,11 +69,11 @@ A: Common treatment areas include:
 
 A: CoolSculpting is great for healthy adults near their ideal weight looking to target specific problem areas, not overall weight loss.
 
-It is great for patients with stubborn fat areas that won’t budge, (love handles, double chin, thighs or abdomen).  It’s ideal for someone that prefers a non-invasive treatment with no downtime and has realistic expectations and understands that CoolSculpting reduces fat by 20 to 25% per treatment on average. If a patient is committed to a healthy lifestyle post-treatment for a long-lasting effect and willing to maintain results then CoolSculpting is right for you!
+It is great for patients with stubborn fat areas that won’t budge (love handles, double chin, thighs or abdomen). It’s ideal for someone that prefers a non-invasive treatment with no downtime and has realistic expectations and understands that CoolSculpting reduces fat by 20 to 25% per treatment on average. If a patient is committed to a healthy lifestyle post-treatment for a long-lasting effect and willing to maintain results then CoolSculpting is right for you!
 
 **Q:** **Who can NOT get CoolSculpting?**
 
-You cannot get CoolSculpting if you have any contraindications to the treatment, including paroxysmal cold hemoglobinuria, hemoglobinuria, or cold agglutinin disease. We do not treat pregnant clients with CoolSculpting or CoolTone. We do not treat breastfeeding clients with CoolSculpting.
+A: You cannot get CoolSculpting if you have any contraindications to the treatment, including paroxysmal cold hemoglobinuria, hemoglobinuria, or cold agglutinin disease. We do not treat pregnant clients with CoolSculpting or CoolTone. We do not treat breastfeeding clients with CoolSculpting.
 
 **Q: How much does CoolSculpting cost?**
 
@@ -87,54 +87,54 @@ A: On average, patients invest between $2,500 to $6,500 on their treatments. Dur
 
 ## Abdomen
 
-* ![](img:2025/08/image11-e1755716701934.png)
-* ![](img:2025/08/image13-e1755716560266.png)
-* ![](img:2025/08/image16-e1755716588424.png)
-* ![](img:2025/08/image15-e1755716524608.png)
-* ![](img:2025/08/image19-e1755716656951.png)
-* ![](img:2025/08/image17-e1755716625196.png)
-* ![](img:2025/08/image18-e1755716450254.png)
+* ![CoolSculpting before and after, abdomen, patient 1](img:2025/08/image11-e1755716701934.png)
+* ![CoolSculpting before and after, abdomen, patient 2](img:2025/08/image13-e1755716560266.png)
+* ![CoolSculpting before and after, abdomen, patient 3](img:2025/08/image16-e1755716588424.png)
+* ![CoolSculpting before and after, abdomen, patient 4](img:2025/08/image15-e1755716524608.png)
+* ![CoolSculpting before and after, abdomen, patient 5](img:2025/08/image19-e1755716656951.png)
+* ![CoolSculpting before and after, abdomen, patient 6](img:2025/08/image17-e1755716625196.png)
+* ![CoolSculpting before and after, abdomen, patient 7](img:2025/08/image18-e1755716450254.png)
 
 ## Flanks (Male)
 
-* ![](img:2025/08/image20.jpg)
-* ![](img:2025/08/image21.png)
-* ![](img:2025/08/image22.png)
-* ![](img:2025/08/image12-1.png)
+* ![CoolSculpting before and after, male flanks, patient 1](img:2025/08/image20.jpg)
+* ![CoolSculpting before and after, male flanks, patient 2](img:2025/08/image21.png)
+* ![CoolSculpting before and after, male flanks, patient 3](img:2025/08/image22.png)
+* ![CoolSculpting before and after, male flanks, patient 4](img:2025/08/image12-1.png)
 
 ## Flanks (Female)
 
-* ![](img:2025/08/image23.jpg)
-* ![](img:2025/08/image24.jpg)
-* ![](img:2025/08/image25.jpg)
-* ![](img:2025/08/image1-1.png)
-* ![](img:2025/08/image2-1.png)
+* ![CoolSculpting before and after, female flanks, patient 1](img:2025/08/image23.jpg)
+* ![CoolSculpting before and after, female flanks, patient 2](img:2025/08/image24.jpg)
+* ![CoolSculpting before and after, female flanks, patient 3](img:2025/08/image25.jpg)
+* ![CoolSculpting before and after, female flanks, patient 4](img:2025/08/image1-1.png)
+* ![CoolSculpting before and after, female flanks, patient 5](img:2025/08/image2-1.png)
 
 ## Arms
 
-* ![](img:2025/08/image3.jpg)
-* ![](img:2025/08/image4-1.png)
-* ![](img:2025/08/image5.png)
-* ![](img:2025/08/image6.png)
+* ![CoolSculpting before and after, upper arms, patient 1](img:2025/08/image3.jpg)
+* ![CoolSculpting before and after, upper arms, patient 2](img:2025/08/image4-1.png)
+* ![CoolSculpting before and after, upper arms, patient 3](img:2025/08/image5.png)
+* ![CoolSculpting before and after, upper arms, patient 4](img:2025/08/image6.png)
 
 ## Submental/Chin
 
-* ![](img:2025/08/image7.png)
-* ![](img:2025/08/image8.png)
-* ![](img:2025/08/image9.png)
-* ![](img:2025/08/image10.png)
-* ![](img:2025/08/image14.png)
+* ![CoolSculpting before and after, chin (submental area), patient 1](img:2025/08/image7.png)
+* ![CoolSculpting before and after, chin (submental area), patient 2](img:2025/08/image8.png)
+* ![CoolSculpting before and after, chin (submental area), patient 3](img:2025/08/image9.png)
+* ![CoolSculpting before and after, chin (submental area), patient 4](img:2025/08/image10.png)
+* ![CoolSculpting before and after, chin (submental area), patient 5](img:2025/08/image14.png)
 
 </div>
 
 ##### More Services
 
-![](img:2023/06/CoolTone-is-an-FDA-cleared.jpg)
+![Abdomen marked with treatment lines for CoolTone](img:2023/06/CoolTone-is-an-FDA-cleared.jpg)
 
 ###### CoolSculpting® | CoolTone
 
 CoolTone is an FDA-cleared, non-invasive treatment that uses magnetic muscle stimulation to tone, firm, and strengthen muscles.
 
-[Read More](/services/coolsculptings/cool-tone/ "Cool Tone")
+[Read More](/services/coolsculptings/cool-tone/ "CoolTone")
 
 [Request Appointment](/request-appointment/ "Request Appointment")

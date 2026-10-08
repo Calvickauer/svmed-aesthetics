@@ -6,6 +6,7 @@ import Carousel from '../../components/Carousel.astro';
 import CtaBox from '../../components/CtaBox.astro';
 import TreatYourself from '../../components/TreatYourself.astro';
 import { u } from '../../lib/site';
+import { altFor } from '../../data/alt';
 const items = [
   { t: 'Neuromodulators (Botox)', d: 'Botox and Dysport are the world’s most popular treatment for wrinkles.', img: '2022/11/botox-thumbnail.png', href: '/services/neuromodulators/' },
   { t: 'Dermal Fillers', d: 'Dermal fillers are an easy and convenient way to enhance natural beauty and restore a youthful appearance.', img: '2022/11/dermal-fillers.jpg', href: '/services/dermal-fillers/' },
@@ -16,7 +17,7 @@ const items = [
   { t: 'CoolSculpting', d: 'CoolSculpting® is an FDA-cleared fat-freezing system that eliminates extra body fat.', img: '2022/11/coolsculpting.jpg', href: '/services/coolsculptings/' },
   { t: 'PRF Hair Restoration', d: 'Regrow your hair thicker and stronger with PRF hair treatments.', img: '2023/06/services.png', href: '/services/prf-hair-restoration/' },
   { t: 'Biostimulators', d: 'Enhance your collagen for the most natural looking results.', img: '2023/06/natural.png', href: '/services/biostimulators/' },
-  { t: 'Radio Frequency Microneedling', d: 'Skin tightening & improve fine lines and scars with RF MN.', img: '2023/06/vector.png', href: '/services/radio-frequency-microneedling/' },
+  { t: 'Radiofrequency Microneedling', d: 'Skin tightening & improve fine lines and scars with RF microneedling.', img: '2023/06/vector.png', href: '/services/radio-frequency-microneedling/' },
 ];
 const ba = ['2022/10/90907.jpg', '2022/10/90908.jpg', '2022/10/90909.jpg', '2022/10/90910.jpg', '2022/10/90911.jpg', '2022/11/5.png', '2022/11/6.png', '2022/11/filter1.png', '2022/11/filter2.png', '2022/09/Halo-Laser-Treatments-Los-Angeles-Rejuva.jpeg', '2022/09/laser-treatments-bbl-broad-band-light-LA.jpeg'];
 ---
@@ -44,7 +45,7 @@ const ba = ['2022/10/90907.jpg', '2022/10/90908.jpg', '2022/10/90909.jpg', '2022
     <div class="wrap">
       <div class="sec-head center" data-reveal><p class="eyebrow">Real Results</p><h2 id="ba-h">Before &amp; After</h2></div>
       <Carousel label="Before and after results" class="svc-ba">
-        {ba.map((b) => <li><Img src={b} alt="Before and after treatment results" sizes="(min-width: 992px) 360px, (min-width: 600px) 45vw, 82vw" /></li>)}
+        {ba.map((b) => <li><Img src={b} alt={altFor(b)} sizes="(min-width: 992px) 360px, (min-width: 600px) 45vw, 82vw" /></li>)}
       </Carousel>
     </div>
   </section>
