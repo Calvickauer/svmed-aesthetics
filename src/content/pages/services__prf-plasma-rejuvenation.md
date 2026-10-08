@@ -11,7 +11,7 @@ ogImage: "2023/06/services.png"
 
 ### PRF/Plasma Rejuvenation
 
-PRF (platelet rich fibrin) is a natural and patient-derived substance used in many areas of medicine. It is used in aesthetics to rejuvenate the skin and enhance healing. PRF creates a fibrin matrix that contains platelets, white blood cells, and proteins/growth factors that are slowly released to promote collagen production, tissue regeneration and skin rejuvenation.  Everyone will yield a different amount of PRF, so the surface area will depend on your blood and how much volume we get. Please arrive hydrated for best results!
+PRF (platelet rich fibrin) is a natural and patient-derived substance used in many areas of medicine. It is used in aesthetics to rejuvenate the skin and enhance healing. PRF creates a fibrin matrix that contains platelets, white blood cells, and proteins/growth factors that are slowly released to promote collagen production, tissue regeneration and skin rejuvenation. Everyone will yield a different amount of PRF, so the surface area will depend on your blood and how much volume we get. Please arrive hydrated for best results!
 
 **Q: What is the difference between PRP and PRF?**
 
@@ -24,8 +24,8 @@ A: PRF can be used for microneedling and as an injection. Commonly treated areas
 * Microneedling- the PRF is placed onto the surface of the skin and infused with tiny needles for a beautiful glow.
 * Full Face Glow Up- very small needles are used to inject the PRF underneath the skin.
 * Plasma Eyes- injected to the under eye area to thicken the delicate skin and improve the appearance of fine lines.
-* PRF Filler- The PRF is made into a gel-like consistency and is injected like filler. The volume is not as long lasting as HA dermal fillers, but provides long term collagen stimulation
-* PRF Hair restoration- PRF is injected into the scalp to nourish the follicles for thicker stronger hair. [Learn more here.](/services/prf-hair-restoration/)
+* PRF Filler- The PRF is made into a gel-like consistency and is injected like filler. The volume is not as long lasting as HA dermal fillers, but provides long term collagen stimulation.
+* PRF Hair Restoration- PRF is injected into the scalp to nourish the follicles for thicker stronger hair. [Learn more here.](/services/prf-hair-restoration/)
 
 **Q: Is there any downtime for these procedures?**
 
@@ -37,4 +37,4 @@ A: Much like most collagen stimulating procedures, we recommend an initial serie
 
 **Q: Who is a good candidate for a PRF treatment?**
 
-A: PRF is suitable for almost everyone! Patients with blood disorders are not candidates for this procedure. PRF contains only your own blood, there are no additives, and it is safe for anyone who wants a preventative or rejuvenating procedure with natural looking results.
+A: PRF is suitable for almost everyone! Patients with blood disorders are not candidates for this procedure. PRF contains only your own blood; there are no additives, and it is safe for anyone who wants a preventative or rejuvenating procedure with natural looking results.

@@ -11,7 +11,7 @@ ogImage: null
 
 ### HALO Laser
 
-The HALO is the world’s first hybrid fractional laser and has become known for the “HALO-glow” or the flawless complexion you get after your treatment. The Halo simultaneously delivers two different wavelengths into the same microscopic treatment zone, while leaving a portion of the epidermis intact for a faster recovery time. Each treatment is fully customized to deliver the most precise, comfortable, and consistent ablative technology on the market. Fine lines, texture, large pores, sun damage, dullness and scars can all be addressed with this technology.
+The HALO is the world’s first hybrid fractional laser and has become known for the “HALO-glow” or the flawless complexion you get after your treatment. The HALO simultaneously delivers two different wavelengths into the same microscopic treatment zone, while leaving a portion of the epidermis intact for a faster recovery time. Each treatment is fully customized to deliver the most precise, comfortable, and consistent ablative technology on the market. Fine lines, texture, large pores, sun damage, dullness and scars can all be addressed with this technology.
 
 **Q: How many treatments will I need?**
 
@@ -21,7 +21,7 @@ The HALO is the world’s first hybrid fractional laser and has become known for
 
 **A:** HALO treatments can be performed on the face and body for most skin types. With darker skin types (type III-IV), you may be required to pre-treat with a pigment inhibitor.
 
-**Q: What skin concerns does Halo address?**
+**Q: What skin concerns does HALO address?**
 
 **A:** HALO is known as the “Holy Grail” of skin treatments—it addresses pigmentation, fine lines, acne scars and textural issues all in a single modality. Depending on your needs, we may recommend a combination of HALO and BBL for an even more dramatic result.
 
@@ -37,13 +37,13 @@ Please arrive to your appointment with no makeup and clean skin.
 
 **A:** The treatment feels very warm and we recommend using a high-grade topical anesthetic for about 30 minutes before treatment. In addition, a chilling device will also be used to keep the skin cool during treatments, which can help ease any discomfort.
 
-**Q: What can I expect after a Halo Treatment?**
+**Q: What can I expect after a HALO treatment?**
 
 **A:** Following the treatment, your skin will be red and feel hot for several hours. The day following your treatment, expect your skin to be pink and you may also experience swelling. On day 3-4 your skin will begin to feel rough and dry, like sandpaper, and this will all begin to flake off revealing a smooth, rejuvenated appearance known as the HALO glow!
 
 For more information, visit <https://sciton.com/bbl-heroic/#faq>
 
-![](img:2025/08/image7.png)
+![Provider holding the HALO laser handpiece](img:2025/08/image7-halo-laser.jpg)
 
 ##### Benefits
 
@@ -71,7 +71,7 @@ The BBL can specifically target dark spots on the face, neck, chest, hands, and 
 
 **Q: How many treatments will I need?**
 
-**A:** Patients require more than one treatment to achieve desired results. Most of the pigment is not sitting right at the surface of the skin, so multiple sessions are required to bring the pigment to the surface so it can come off. We recommend a series of 3 Treatments.
+**A:** Patients require more than one treatment to achieve desired results. Most of the pigment is not sitting right at the surface of the skin, so multiple sessions are required to bring the pigment to the surface so it can come off. We recommend a series of 3 treatments.
 
 **Q: What can I expect after a BBL treatment?**
 

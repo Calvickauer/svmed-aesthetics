@@ -13,7 +13,7 @@ ogImage: null
 
 ###### Long term solution for unwanted hair
 
-Laser hair removal uses fast laser light pulses to selectively destroy hair follicles by targeting their melanin (color). The pigment in the hair follicle absorbs the laser’s light pulse, which damages the follicle enough to significantly slow hair regrowth, it unfortunately will not work on blond or white hair, or peach fuzz.  All laser treatments require a test spot prior to treatment to ensure safety.
+Laser hair removal uses fast laser light pulses to selectively destroy hair follicles by targeting their melanin (color). The pigment in the hair follicle absorbs the laser’s light pulse, which damages the follicle enough to significantly slow hair regrowth. Unfortunately, it will not work on blond or white hair, or peach fuzz. All laser treatments require a test spot prior to treatment to ensure safety.
 
 **Q: How long are the sessions?**
 
@@ -25,15 +25,15 @@ Laser hair removal uses fast laser light pulses to selectively destroy hair foll
 
 **Q: How many treatments will I need?**
 
-**A:** Because only hair follicles in the active growth stage can be successfully targeted during a laser hair removal treatment, you will need multiple sessions, whether you’re treating your legs, underarms, face, back, bikini. On average, we recommend four to six treatments, spaced six to eight weeks apart.
+**A:** Because only hair follicles in the active growth stage can be successfully targeted during a laser hair removal treatment, you will need multiple sessions, whether you’re treating your legs, underarms, face, back or bikini. On average, we recommend four to six treatments, spaced six to eight weeks apart.
 
 **Q: Who is a candidate for laser hair removal?**
 
-**A:** Anyone who has unwanted brown or black hair can do laser removal. This works best on patients with lighter skin and thick dark hair. All laser treatments require a test spot prior to treatment to ensure safety. **This will not work on blond or white hair or thin peach-fuzz type hair.**
+**A:** Anyone who has unwanted brown or black hair can do laser hair removal. This works best on patients with lighter skin and thick dark hair. All laser treatments require a test spot prior to treatment to ensure safety. **This will not work on blond or white hair or thin peach-fuzz type hair.**
 
 **Q: What side effects can I experience?**
 
-**A:** There are a few potential side effects, The most common ones include redness, swelling, itching or bumps, but they should go away within a day or two.
+**A:** There are a few potential side effects. The most common ones include redness, swelling, itching or bumps, but they should go away within a day or two.
 
 **Q: Is laser hair removal permanent?**
 
@@ -45,7 +45,7 @@ Laser hair removal uses fast laser light pulses to selectively destroy hair foll
 
 **SIX WEEKS BEFORE YOUR TREATMENT…**
 
-* **Discontinue all hair removal methods** in the treatment area EXCEPT for shaving- including waxing, hair removal creams or chemicals, tweezing and electrolysis.
+* **Discontinue all hair removal methods** in the treatment area EXCEPT for shaving—including waxing, hair removal creams or chemicals, tweezing and electrolysis.
 * **Discontinue bleaching** your hair in the treatment area.
 
 **TWO WEEKS BEFORE YOUR TREATMENT…**
@@ -70,13 +70,13 @@ Laser hair removal uses fast laser light pulses to selectively destroy hair foll
 
 * **Remove any products** such as makeup, deodorant, lotion, sunscreen, etc. from the area being treated before your appointment. If you forget this one, we’ll have wipes on hand.
 
-![](img:2025/08/image6.png)
+![Laser hair removal treatment on a patient’s underarm](img:2025/08/image6-laser-hair-removal.jpg)
 
 **Common treatment areas:**
 
-* Under arms
-* Face/ upper lip
-* Bikini/ Brazilian
+* Underarms
+* Face/upper lip
+* Bikini/Brazilian
 * Legs
 * Back
 

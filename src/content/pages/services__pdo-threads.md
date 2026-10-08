@@ -27,7 +27,7 @@ ogImage: null
 
 **Q: What is the recovery time?**
 
-**A:** As with most cosmetic procedures, bruising, swelling, and tenderness are common. When using the lifting threads, which are commonly placed in an upward direction going into the hairline, a headache for the following 2-3 days is common. Most people experience a tightness feeling as well. You can take over the counter pain relievers as needed after the procedure. You will be sent home with small bandaids or steri-strips over the needle holes, and they will stay on for 24 hours.  No vigorous exercise, swimming or saunas for 48 hours, and no facials or massages for one week.
+**A:** As with most cosmetic procedures, bruising, swelling, and tenderness are common. When using the lifting threads, which are commonly placed in an upward direction going into the hairline, a headache for the following 2-3 days is common. Most people experience a tightness feeling as well. You can take over-the-counter pain relievers as needed after the procedure. You will be sent home with small bandaids or steri-strips over the needle holes, and they will stay on for 24 hours. No vigorous exercise, swimming or saunas for 48 hours, and no facials or massages for one week.
 
 **Q: Who is a good candidate for a PDO Thread Lift?**
 
@@ -35,4 +35,4 @@ ogImage: null
 
 [Request Appointment](/request-appointment/ "Request Appointment")
 
-![PDO Threads](img:2022/12/thread.png)
+![PDO thread lift before and after, midface and lower face](img:2022/12/thread.png)

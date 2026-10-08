@@ -20,6 +20,6 @@ Prior to her enrollment in PA school, Rachel, her mother and sister had their ow
 
 After moving to California with her husband she began her career as a surgical PA specializing in general, vascular and thoracic surgeries at Salinas Valley Memorial Hospital. Rachel has always been interested in cosmetic dermatology and considers a holistic approach while providing the best care for her patients.
 
-She took the time to be trained in cosmetics by Teresa McMillin; mastering all the skills needed to achieve optimal results for her patients, such as Botox, Dysport and fillers, laser rejuvenation and hair removal treatments. She has also received professional certifications for Advanced Cannula Techniques and PDO Thread lifts.
+She took the time to be trained in cosmetics by Teresa McMillin, mastering all the skills needed to achieve optimal results for her patients, such as Botox, Dysport and fillers, laser rejuvenation and hair removal treatments. She has also received professional certifications for Advanced Cannula Techniques and PDO thread lifts.
 
 She is passionate about creating a treatment plan with her patients to achieve natural results, while always keeping patient goals and satisfaction in mind. Outside of work she enjoys woodworking, practicing yoga, and spending time outdoors with her dogs Bella and Bear.

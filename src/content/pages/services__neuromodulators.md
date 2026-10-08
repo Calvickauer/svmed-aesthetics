@@ -13,9 +13,9 @@ ogImage: null
 
 ###### Smooth and soften lines in the forehead, frown lines and crow’s feet with neuromodulators
 
-Botox and Dysport are the world’s most popular treatment for wrinkles, Botox and Dysport are safe, effective wrinkle minimizers. These tiny, amazing purified proteins work by relaxing the muscles that are responsible for many of our facial lines and wrinkles. In addition to aging us, these lines can make us look more tired than we would like. Botox and Dysport can help smooth away these lines, while still allowing you to make natural facial expressions. The result is a natural, refreshed, NOT frozen look.
+Botox and Dysport are the world’s most popular treatment for wrinkles. Botox and Dysport are safe, effective wrinkle minimizers. These tiny, amazing purified proteins work by relaxing the muscles that are responsible for many of our facial lines and wrinkles. In addition to aging us, these lines can make us look more tired than we would like. Botox and Dysport can help smooth away these lines, while still allowing you to make natural facial expressions. The result is a natural, refreshed, NOT frozen look.
 
-You might know these wrinkle minimizers best for their ability to soften the frown lines between your brows. But Botox and Dysport can also work wonders erasing your horizontal forehead lines and crow’s feet, this can help you look and feel your best!
+You might know these wrinkle minimizers best for their ability to soften the frown lines between your brows. But Botox and Dysport can also work wonders erasing your horizontal forehead lines and crow’s feet. This can help you look and feel your best!
 
 **What to expect during treatment**
 
@@ -27,6 +27,6 @@ You may start to see the effects of your treatment in a couple of days; however,
 
 **How much Botox/Dysport do I need?**
 
-The quantity of Botox or Dysport that you will need depends on many factors, including the goals you are trying to achieve, the size of the area(s) being treated, the strength of your muscles, your personal anatomy, and of course your age. Because every patient is unique, we recommend an in-person consultation with one of our injectors to evaluate how much Botox  or Dysport is appropriate for your particular needs. Your injector will discuss your concerns and treatment goals with you and suggest an individualized treatment plan that is tailored to your skin.
+The quantity of Botox or Dysport that you will need depends on many factors, including the goals you are trying to achieve, the size of the area(s) being treated, the strength of your muscles, your personal anatomy, and of course your age. Because every patient is unique, we recommend an in-person consultation with one of our injectors to evaluate how much Botox or Dysport is appropriate for your particular needs. Your injector will discuss your concerns and treatment goals with you and suggest an individualized treatment plan that is tailored to your skin.
 
 [Request Appointment](/request-appointment/ "Request Appointment")
